@@ -1,0 +1,11 @@
+torchrun --nproc_per_node 1 -m main \
+    --model CAFT-B \
+    --pretrained /path/to/data/checkpoints/CAFT-30M.pt \
+    --inference-mode caft \
+    --urban-1k-retrieval-dir /path/to/data/eval/Urban1k \
+    --retrieval-urban-1k \
+    --alpha 0.3s \
+    --batch-size 128 \
+    --eval-img-batch-size 128 \
+    --precision amp \
+    --workers 25 \

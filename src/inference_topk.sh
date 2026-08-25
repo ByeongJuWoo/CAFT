@@ -1,0 +1,21 @@
+torchrun --nproc_per_node 1 -m main \
+    --model CAFT-B \
+    --pretrained /path/to/data/checkpoints/CAFT-30M.pt \
+    --inference-mode caft_topk \
+    --topk 16 \
+    --dci-retrieval-dir /path/to/data/eval/dci \
+    --docci-retrieval-dir /path/to/data/eval/docci \
+    --sharegpt4v-retrieval-dir /path/to/data/eval/share4v \
+    --urban-1k-retrieval-dir /path/to/data/eval/Urban1k \
+    --iiw-retrieval-dir  /path/to/data/eval/imageinwords/ \
+    --retrieval-dci \
+    --retrieval-docci \
+    --retrieval-sharegpt4v-10k \
+    --retrieval-sharegpt4v-10k \
+    --retrieval-urban-1k \
+    --retrieval-iiw \
+    --alpha 0.3 \
+    --batch-size 128 \
+    --eval-img-batch-size 128 \
+    --precision amp \
+    --workers 25 \

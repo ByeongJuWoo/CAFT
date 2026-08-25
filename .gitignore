@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+
+# notebooks change on every run (outputs) on each machine independently;
+# not part of the local/GitHub/VESSL sync (vis_utils.py stays tracked)
+src/notebooks/*.ipynb
+src/notebooks/.ipynb_checkpoints/

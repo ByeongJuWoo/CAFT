@@ -1,0 +1,890 @@
+2025-09-04,07:36:50 | INFO | Running in distributed mode with multiple processes. Device: cuda:0.Process (global: 0, local 0), total 8.
+2025-09-04,07:36:50 | INFO | Loaded CAST-B-HieFLAIR model config.
+2025-09-04,07:36:52 | INFO | Model:
+2025-09-04,07:36:52 | INFO | HieFLAIR(
+  (visual): CAST(
+    (patch_embed): ConvStemV1(
+      (proj): Sequential(
+        (0): Conv2d(3, 96, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Conv2d(96, 192, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (4): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU(inplace=True)
+        (6): Conv2d(192, 384, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (7): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (8): ReLU(inplace=True)
+        (9): Conv2d(384, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (10): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (11): ReLU(inplace=True)
+        (12): Conv2d(768, 768, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (norm): Identity()
+    )
+    (pos_drop): Dropout(p=0.0, inplace=False)
+    (blocks): Sequential(
+      (0): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (1): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (2): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (3): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (4): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (5): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (6): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (7): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (8): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (9): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+      (10): Block(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (drop_path): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+      )
+    )
+    (pools): ModuleList(
+      (0-2): 3 x Pooling(
+        (pool_block): GraphPoolingReg(
+          (centroid_fc): Block(
+            (norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+            (attn): Attention(
+              (qkv): Linear(in_features=768, out_features=2304, bias=True)
+              (attn_drop): Dropout(p=0.0, inplace=False)
+              (proj): Linear(in_features=768, out_features=768, bias=True)
+              (proj_drop): Dropout(p=0.0, inplace=False)
+            )
+            (drop_path): Identity()
+          )
+          (fc1): Sequential(
+            (0): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (1): Linear(in_features=768, out_features=3072, bias=True)
+            (2): GELU(approximate='none')
+            (3): Dropout(p=0.1, inplace=False)
+          )
+          (fc2): Sequential(
+            (0): LayerNorm((3072,), eps=1e-05, elementwise_affine=True)
+            (1): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls): Identity()
+        )
+      )
+    )
+    (norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+    (norm_fine): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+    (superpixel_generator): SpixelNetCustom(
+      (conv0a): Sequential(
+        (0): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (conv0b): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (conv1a): Sequential(
+        (0): Conv2d(16, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (conv1b): Sequential(
+        (0): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (conv2a): Sequential(
+        (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (conv2b): Sequential(
+        (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (conv3a): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (conv3b): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (conv4a): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (conv4b): Sequential(
+        (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (deconv3): Sequential(
+        (0): ConvTranspose2d(256, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1)
+      )
+      (conv3_1): Sequential(
+        (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (pred_mask3): Conv2d(128, 9, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (deconv2): Sequential(
+        (0): ConvTranspose2d(128, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1)
+      )
+      (conv2_1): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (pred_mask2): Conv2d(64, 9, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (deconv1): Sequential(
+        (0): ConvTranspose2d(64, 32, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1)
+      )
+      (conv1_1): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (pred_mask1): Conv2d(32, 9, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (deconv0): Sequential(
+        (0): ConvTranspose2d(32, 16, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+        (1): LeakyReLU(negative_slope=0.1)
+      )
+      (conv0_1): Sequential(
+        (0): Conv2d(32, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1)
+      )
+      (pred_mask0): Conv2d(16, 9, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (softmax): Softmax(dim=1)
+    )
+  )
+  (visual_proj): PureAttentionPoolingBlock(
+    (attn): MultiheadAttention(
+      (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+    )
+    (ln_q): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (ln_k): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (ln_v): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  )
+  (transformer): Transformer(
+    (resblocks): ModuleList(
+      (0-7): 8 x ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+    )
+  )
+  (token_embedding): Embedding(49408, 512)
+  (ln_final): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+  (image_post): VisionPostProcess()
+  (text_post): TextPostProcess()
+  (paragraph_encoder): ParagraphTransformer(
+    (transformer): Transformer(
+      (resblocks): ModuleList(
+        (0-3): 4 x ResidualAttentionBlock(
+          (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+          )
+          (ls_2): Identity()
+        )
+      )
+    )
+    (ln_final): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+    (adapter): ResidualAdapter(
+      (ls): LayerScale()
+      (mlp): Sequential(
+        (c_fc): Linear(in_features=512, out_features=341, bias=True)
+        (gelu): GELU(approximate='none')
+        (c_proj): Linear(in_features=341, out_features=512, bias=True)
+      )
+    )
+  )
+  (image_post_coarse): VisionPostProcess()
+  (text_post_coarse): TextPostProcess()
+)
+2025-09-04,07:36:52 | INFO | Params:
+2025-09-04,07:36:52 | INFO |   ablation_negative_type: None
+2025-09-04,07:36:52 | INFO |   accum_freq: 1
+2025-09-04,07:36:52 | INFO |   add_attn_pooling: False
+2025-09-04,07:36:52 | INFO |   add_global_loss: False
+2025-09-04,07:36:52 | INFO |   add_global_loss_cross_con: False
+2025-09-04,07:36:52 | INFO |   add_global_loss_cross_con_mean: False
+2025-09-04,07:36:52 | INFO |   add_global_loss_in_sampled_cross_con: False
+2025-09-04,07:36:52 | INFO |   add_global_loss_textcon: False
+2025-09-04,07:36:52 | INFO |   add_global_loss_textcon_with_attn_pool: False
+2025-09-04,07:36:52 | INFO |   add_intra_sample_loss: False
+2025-09-04,07:36:52 | INFO |   add_mps_loss: False
+2025-09-04,07:36:52 | INFO |   add_pooled_global_loss_cross_con: False
+2025-09-04,07:36:52 | INFO |   all_subsequent_merged: False
+2025-09-04,07:36:52 | INFO |   aug_cfg: {}
+2025-09-04,07:36:52 | INFO |   batch_size: 256
+2025-09-04,07:36:52 | INFO |   beta1: 0.9
+2025-09-04,07:36:52 | INFO |   beta2: 0.98
+2025-09-04,07:36:52 | INFO |   caption_sampling_mode: para4_other4_sampling
+2025-09-04,07:36:52 | INFO |   cc3m_train_retrieval_dir: 
+2025-09-04,07:36:52 | INFO |   checkpoint_path: ./logs/09_04-07_36_47-model_CAST-B-HieFLAIR-L_ftcs_fmps_cmps-sample_p4o4-b_256/checkpoints
+2025-09-04,07:36:52 | INFO |   coca_caption_loss_weight: 2.0
+2025-09-04,07:36:52 | INFO |   coca_contrastive_loss_weight: 1.0
+2025-09-04,07:36:52 | INFO |   coco_data_root_dir: 
+2025-09-04,07:36:52 | INFO |   coco_random_subset: None
+2025-09-04,07:36:52 | INFO |   coco_sliding_window: None
+2025-09-04,07:36:52 | INFO |   copy_codebase: False
+2025-09-04,07:36:52 | INFO |   cross_con: False
+2025-09-04,07:36:52 | INFO |   cross_con_with_down_proj: False
+2025-09-04,07:36:52 | INFO |   cross_con_with_post_process: False
+2025-09-04,07:36:52 | INFO |   csv_caption_key: title
+2025-09-04,07:36:52 | INFO |   csv_img_key: filepath
+2025-09-04,07:36:52 | INFO |   csv_separator: 	
+2025-09-04,07:36:52 | INFO |   data_root_dir: 
+2025-09-04,07:36:52 | INFO |   datacomp: False
+2025-09-04,07:36:52 | INFO |   dataset_resampled: False
+2025-09-04,07:36:52 | INFO |   dataset_type: coco
+2025-09-04,07:36:52 | INFO |   dci_retrieval_dir: /mnt/flair-main/datasets/dci
+2025-09-04,07:36:52 | INFO |   ddp_static_graph: False
+2025-09-04,07:36:52 | INFO |   debug: False
+2025-09-04,07:36:52 | INFO |   delete_previous_checkpoint: False
+2025-09-04,07:36:52 | INFO |   device: cuda:0
+2025-09-04,07:36:52 | INFO |   dict_root_dir: None
+2025-09-04,07:36:52 | INFO |   directly_use_attn_weights: False
+2025-09-04,07:36:52 | INFO |   dist_backend: nccl
+2025-09-04,07:36:52 | INFO |   dist_url: env://
+2025-09-04,07:36:52 | INFO |   distill_model: None
+2025-09-04,07:36:52 | INFO |   distill_pretrained: None
+2025-09-04,07:36:52 | INFO |   distributed: True
+2025-09-04,07:36:52 | INFO |   docci_retrieval_dir: 
+2025-09-04,07:36:52 | INFO |   dreamlip_model: False
+2025-09-04,07:36:52 | INFO |   epochs: 32
+2025-09-04,07:36:52 | INFO |   epochs_cooldown: None
+2025-09-04,07:36:52 | INFO |   eps: 1e-08
+2025-09-04,07:36:52 | INFO |   evaluate_as_original_clip: False
+2025-09-04,07:36:52 | INFO |   evaluate_as_text_conditioned: False
+2025-09-04,07:36:52 | INFO |   fixed_merged_num: False
+2025-09-04,07:36:52 | INFO |   flickr_data_root_dir: 
+2025-09-04,07:36:52 | INFO |   flickr_val_or_test: val
+2025-09-04,07:36:52 | INFO |   force_custom_text: False
+2025-09-04,07:36:52 | INFO |   force_image_size: None
+2025-09-04,07:36:52 | INFO |   force_patch_dropout: None
+2025-09-04,07:36:52 | INFO |   force_quick_gelu: False
+2025-09-04,07:36:52 | INFO |   gather_with_grad: False
+2025-09-04,07:36:52 | INFO |   grad_checkpointing: False
+2025-09-04,07:36:52 | INFO |   grad_clip_norm: None
+2025-09-04,07:36:52 | INFO |   hard_negative: False
+2025-09-04,07:36:52 | INFO |   hieflair_loss: ftcs_fmps_cmps
+2025-09-04,07:36:52 | INFO |   horovod: False
+2025-09-04,07:36:52 | INFO |   huggingface_model_name: 
+2025-09-04,07:36:52 | INFO |   huggingface_repo_name: 
+2025-09-04,07:36:52 | INFO |   iiw_retrieval_dir: 
+2025-09-04,07:36:52 | INFO |   image_interpolation: None
+2025-09-04,07:36:52 | INFO |   image_mean: None
+2025-09-04,07:36:52 | INFO |   image_resize_mode: None
+2025-09-04,07:36:52 | INFO |   image_std: None
+2025-09-04,07:36:52 | INFO |   imagenet_v2: None
+2025-09-04,07:36:52 | INFO |   imagenet_val: None
+2025-09-04,07:36:52 | INFO |   inference_with_flair: hieflair
+2025-09-04,07:36:52 | INFO |   inference_with_hieflair: False
+2025-09-04,07:36:52 | INFO |   input_size: 224
+2025-09-04,07:36:52 | INFO |   local_loss: False
+2025-09-04,07:36:52 | INFO |   local_rank: 0
+2025-09-04,07:36:52 | INFO |   lock_image: False
+2025-09-04,07:36:52 | INFO |   lock_image_freeze_bn_stats: False
+2025-09-04,07:36:52 | INFO |   lock_image_unlocked_groups: 0
+2025-09-04,07:36:52 | INFO |   lock_text: False
+2025-09-04,07:36:52 | INFO |   lock_text_freeze_layer_norm: False
+2025-09-04,07:36:52 | INFO |   lock_text_unlocked_layers: 0
+2025-09-04,07:36:52 | INFO |   log_every_n_steps: 200
+2025-09-04,07:36:52 | INFO |   log_level: 20
+2025-09-04,07:36:52 | INFO |   log_local: False
+2025-09-04,07:36:52 | INFO |   log_path: ./logs/09_04-07_36_47-model_CAST-B-HieFLAIR-L_ftcs_fmps_cmps-sample_p4o4-b_256/out.log
+2025-09-04,07:36:52 | INFO |   logs_dir: ./logs/
+2025-09-04,07:36:52 | INFO |   lr: 0.0005
+2025-09-04,07:36:52 | INFO |   lr_cooldown_end: 0.0
+2025-09-04,07:36:52 | INFO |   lr_cooldown_power: 1.0
+2025-09-04,07:36:52 | INFO |   lr_scheduler: cosine
+2025-09-04,07:36:52 | INFO |   max_merged_num: 3
+2025-09-04,07:36:52 | INFO |   merged_captions_num: 1
+2025-09-04,07:36:52 | INFO |   merged_num: 1
+2025-09-04,07:36:52 | INFO |   mixed_sampling_cross_con: False
+2025-09-04,07:36:52 | INFO |   model: CAST-B-HieFLAIR
+2025-09-04,07:36:52 | INFO |   name: 09_04-07_36_47-model_CAST-B-HieFLAIR-L_ftcs_fmps_cmps-sample_p4o4-b_256
+2025-09-04,07:36:52 | INFO |   negative_sampling_in_forward: False
+2025-09-04,07:36:52 | INFO |   negative_sampling_in_gpu: False
+2025-09-04,07:36:52 | INFO |   negative_type: ijj
+2025-09-04,07:36:52 | INFO |   no_set_device_rank: False
+2025-09-04,07:36:52 | INFO |   normal_clip_with_multi_cap: False
+2025-09-04,07:36:52 | INFO |   num_sampled_captions: 8
+2025-09-04,07:36:52 | INFO |   num_sampled_long_captions: 0
+2025-09-04,07:36:52 | INFO |   only_global_loss_attn_pool: False
+2025-09-04,07:36:52 | INFO |   output_file: None
+2025-09-04,07:36:52 | INFO |   pixelprose: False
+2025-09-04,07:36:52 | INFO |   precision: amp
+2025-09-04,07:36:52 | INFO |   pretrained: 
+2025-09-04,07:36:52 | INFO |   pretrained_image: False
+2025-09-04,07:36:52 | INFO |   random_select_text_tokens: False
+2025-09-04,07:36:52 | INFO |   rank: 0
+2025-09-04,07:36:52 | INFO |   remote_sync: None
+2025-09-04,07:36:52 | INFO |   remote_sync_frequency: 300
+2025-09-04,07:36:52 | INFO |   remote_sync_protocol: s3
+2025-09-04,07:36:52 | INFO |   report_to: 
+2025-09-04,07:36:52 | INFO |   resume: None
+2025-09-04,07:36:52 | INFO |   retrieval_coco: False
+2025-09-04,07:36:52 | INFO |   retrieval_data_cc3m_train: False
+2025-09-04,07:36:52 | INFO |   retrieval_dataset_type: coco
+2025-09-04,07:36:52 | INFO |   retrieval_dci: True
+2025-09-04,07:36:52 | INFO |   retrieval_docci: False
+2025-09-04,07:36:52 | INFO |   retrieval_flickr: False
+2025-09-04,07:36:52 | INFO |   retrieval_iiw: False
+2025-09-04,07:36:52 | INFO |   retrieval_sharegpt4v_10k: False
+2025-09-04,07:36:52 | INFO |   retrieval_sharegpt4v_1k: False
+2025-09-04,07:36:52 | INFO |   retrieval_urban_1k: False
+2025-09-04,07:36:52 | INFO |   same_row: False
+2025-09-04,07:36:52 | INFO |   sampled_textcon_siglip_loss: False
+2025-09-04,07:36:52 | INFO |   save_frequency: 4
+2025-09-04,07:36:52 | INFO |   save_most_recent: False
+2025-09-04,07:36:52 | INFO |   seed: 0
+2025-09-04,07:36:52 | INFO |   seg_model: 
+2025-09-04,07:36:52 | INFO |   sharegpt4v_retrieval_dir: 
+2025-09-04,07:36:52 | INFO |   show_dir: 
+2025-09-04,07:36:52 | INFO |   siglip: False
+2025-09-04,07:36:52 | INFO |   skip_scheduler: False
+2025-09-04,07:36:52 | INFO |   target_model: RN50
+2025-09-04,07:36:52 | INFO |   tensorboard: False
+2025-09-04,07:36:52 | INFO |   tensorboard_path: 
+2025-09-04,07:36:52 | INFO |   text_con_attn_pool: False
+2025-09-04,07:36:52 | INFO |   text_con_with_down_proj: False
+2025-09-04,07:36:52 | INFO |   text_conditioned_loss: False
+2025-09-04,07:36:52 | INFO |   torchcompile: False
+2025-09-04,07:36:52 | INFO |   torchscript: False
+2025-09-04,07:36:52 | INFO |   trace: False
+2025-09-04,07:36:52 | INFO |   train_data: /mnt/dreamlip3m/cc3m-train-{0000..0575}.tar
+2025-09-04,07:36:52 | INFO |   train_data_upsampling_factors: None
+2025-09-04,07:36:52 | INFO |   train_dataset_type: webdataset
+2025-09-04,07:36:52 | INFO |   train_eval_data: None
+2025-09-04,07:36:52 | INFO |   train_num_samples: 2823423
+2025-09-04,07:36:52 | INFO |   train_val_num_samples: None
+2025-09-04,07:36:52 | INFO |   txt_con_attn_pool: False
+2025-09-04,07:36:52 | INFO |   txt_self_attn: False
+2025-09-04,07:36:52 | INFO |   urban_1k_retrieval_dir: 
+2025-09-04,07:36:52 | INFO |   use_bn_sync: False
+2025-09-04,07:36:52 | INFO |   use_bnb_linear: None
+2025-09-04,07:36:52 | INFO |   use_csa: False
+2025-09-04,07:36:52 | INFO |   use_dreamlip_loss: False
+2025-09-04,07:36:52 | INFO |   use_finegrained_iiw: True
+2025-09-04,07:36:52 | INFO |   use_flair_loss: False
+2025-09-04,07:36:52 | INFO |   use_original_openclip_csv_dataset: False
+2025-09-04,07:36:52 | INFO |   use_siglip: False
+2025-09-04,07:36:52 | INFO |   val_data: None
+2025-09-04,07:36:52 | INFO |   val_dataset_type: coco
+2025-09-04,07:36:52 | INFO |   val_frequency: 2
+2025-09-04,07:36:52 | INFO |   val_num_samples: None
+2025-09-04,07:36:52 | INFO |   wandb: False
+2025-09-04,07:36:52 | INFO |   wandb_notes: 
+2025-09-04,07:36:52 | INFO |   wandb_project_name: open-clip
+2025-09-04,07:36:52 | INFO |   warmup: 2000
+2025-09-04,07:36:52 | INFO |   wd: 0.5
+2025-09-04,07:36:52 | INFO |   workers: 12
+2025-09-04,07:36:52 | INFO |   world_size: 8
+2025-09-04,07:36:52 | INFO |   zeroshot_eval_datasets: None
+2025-09-04,07:36:52 | INFO |   zeroshot_frequency: 2
+2025-09-04,07:36:54 | INFO | creating DCI dataset list...
+2025-09-04,07:36:57 | INFO | DCI data_list created, pretokenizing...
+2025-09-04,07:37:01 | INFO | pretokenization finished...
+2025-09-04,07:37:01 | INFO | reusing pre-tokenized datalist that we get from DCITextDataset, extracting...
+2025-09-04,07:37:01 | INFO | finish extracting all unique images with img_ids from the whole data_list
+2025-09-04,07:37:01 | INFO | Start epoch 0
+2025-09-04,07:37:20 | INFO | Train Epoch: 0 [   2048/2826240 (0%)] fLS: 2.659  cLS: 2.659 Ftcs_loss: 77.864 (77.864) Fmps_loss: 9.6566 (9.6566) Cmps_loss: 9.7934 (9.7934) Loss: 97.314 (97.314)
+2025-09-04,07:40:32 | INFO | Train Epoch: 0 [ 411648/2826240 (15%)] fLS: 2.659  cLS: 2.659 Ftcs_loss: 42.641 (60.253) Fmps_loss: 7.6679 (8.6622) Cmps_loss: 6.9293 (8.3614) Loss: 57.239 (77.276)
+2025-09-04,07:43:44 | INFO | Train Epoch: 0 [ 821248/2826240 (29%)] fLS: 2.661  cLS: 2.661 Ftcs_loss: 35.504 (52.003) Fmps_loss: 6.7975 (8.0407) Cmps_loss: 5.8242 (7.5156) Loss: 48.126 (67.559)
+2025-09-04,07:46:57 | INFO | Train Epoch: 0 [1230848/2826240 (44%)] fLS: 2.670  cLS: 2.672 Ftcs_loss: 30.699 (46.677) Fmps_loss: 6.1535 (7.5689) Cmps_loss: 4.9969 (6.8860) Loss: 41.849 (61.132)
+2025-09-04,07:50:11 | INFO | Train Epoch: 0 [1640448/2826240 (58%)] fLS: 2.690  cLS: 2.699 Ftcs_loss: 25.983 (42.538) Fmps_loss: 5.5367 (7.1624) Cmps_loss: 4.2523 (6.3592) Loss: 35.772 (56.060)
+2025-09-04,07:53:24 | INFO | Train Epoch: 0 [2050048/2826240 (73%)] fLS: 2.717  cLS: 2.737 Ftcs_loss: 24.318 (39.502) Fmps_loss: 5.2981 (6.8517) Cmps_loss: 3.8740 (5.9450) Loss: 33.490 (52.298)
+2025-09-04,07:56:39 | INFO | Train Epoch: 0 [2459648/2826240 (87%)] fLS: 2.749  cLS: 2.784 Ftcs_loss: 21.796 (36.972) Fmps_loss: 4.8993 (6.5728) Cmps_loss: 3.5098 (5.5971) Loss: 30.205 (49.142)
+2025-09-04,07:59:32 | INFO | Train Epoch: 0 [2826240/2826240 (100%)] fLS: 2.778  cLS: 2.833 Ftcs_loss: 21.587 (35.049) Fmps_loss: 4.8541 (6.3580) Cmps_loss: 3.3704 (5.3188) Loss: 29.812 (46.726)
+2025-09-04,07:59:32 | INFO | Start epoch 1
+2025-09-04,07:59:41 | INFO | Train Epoch: 1 [   2048/2826240 (0%)] fLS: 2.778  cLS: 2.833 Ftcs_loss: 19.463 (19.463) Fmps_loss: 4.6207 (4.6207) Cmps_loss: 3.0671 (3.0671) Loss: 27.151 (27.151)
+2025-09-04,08:02:57 | INFO | Train Epoch: 1 [ 411648/2826240 (15%)] fLS: 2.811  cLS: 2.895 Ftcs_loss: 19.337 (19.400) Fmps_loss: 4.5581 (4.5894) Cmps_loss: 2.9914 (3.0292) Loss: 26.887 (27.019)
+2025-09-04,08:06:11 | INFO | Train Epoch: 1 [ 821248/2826240 (29%)] fLS: 2.842  cLS: 2.959 Ftcs_loss: 18.975 (19.258) Fmps_loss: 4.4146 (4.5311) Cmps_loss: 2.8115 (2.9567) Loss: 26.201 (26.746)
+2025-09-04,08:09:24 | INFO | Train Epoch: 1 [1230848/2826240 (44%)] fLS: 2.872  cLS: 3.026 Ftcs_loss: 17.215 (18.748) Fmps_loss: 4.1129 (4.4266) Cmps_loss: 2.4534 (2.8308) Loss: 23.782 (26.005)
+2025-09-04,08:12:37 | INFO | Train Epoch: 1 [1640448/2826240 (58%)] fLS: 2.901  cLS: 3.092 Ftcs_loss: 15.566 (18.111) Fmps_loss: 3.8391 (4.3091) Cmps_loss: 2.1775 (2.7002) Loss: 21.582 (25.120)
+2025-09-04,08:15:51 | INFO | Train Epoch: 1 [2050048/2826240 (73%)] fLS: 2.930  cLS: 3.153 Ftcs_loss: 13.719 (17.379) Fmps_loss: 3.5476 (4.1822) Cmps_loss: 1.8669 (2.5613) Loss: 19.134 (24.123)
+2025-09-04,08:19:06 | INFO | Train Epoch: 1 [2459648/2826240 (87%)] fLS: 2.961  cLS: 3.214 Ftcs_loss: 13.300 (16.796) Fmps_loss: 3.5010 (4.0849) Cmps_loss: 1.8312 (2.4570) Loss: 18.632 (23.338)
+2025-09-04,08:22:01 | INFO | Train Epoch: 1 [2826240/2826240 (100%)] fLS: 2.985  cLS: 3.262 Ftcs_loss: 13.887 (16.433) Fmps_loss: 3.5232 (4.0147) Cmps_loss: 1.8601 (2.3824) Loss: 19.271 (22.830)
+2025-09-04,08:22:59 | INFO | Eval Epoch: 2 retrieval_dci_text_to_image_R@1: 0.2105	retrieval_dci_text_to_image_R@5: 0.4102	retrieval_dci_text_to_image_R@10: 0.5075	retrieval_dci_text_to_image_mean_rank: 88.4856	retrieval_dci_text_to_image_median_rank: 10.0000	retrieval_dci_image_to_text_R@1: 0.2300	retrieval_dci_image_to_text_R@5: 0.4442	retrieval_dci_image_to_text_R@10: 0.5421	retrieval_dci_image_to_text_mean_rank: 72.8191	retrieval_dci_image_to_text_median_rank: 8.0000	epoch: 2.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,08:22:59 | INFO | Start epoch 2
+2025-09-04,08:23:03 | INFO | Train Epoch: 2 [   2048/2826240 (0%)] fLS: 2.985  cLS: 3.262 Ftcs_loss: 12.196 (12.196) Fmps_loss: 3.2464 (3.2464) Cmps_loss: 1.5468 (1.5468) Loss: 16.989 (16.989)
+2025-09-04,08:26:17 | INFO | Train Epoch: 2 [ 411648/2826240 (15%)] fLS: 3.011  cLS: 3.314 Ftcs_loss: 12.514 (12.355) Fmps_loss: 3.2605 (3.2534) Cmps_loss: 1.5953 (1.5711) Loss: 17.369 (17.179)
+2025-09-04,08:29:32 | INFO | Train Epoch: 2 [ 821248/2826240 (29%)] fLS: 3.037  cLS: 3.360 Ftcs_loss: 11.899 (12.203) Fmps_loss: 3.1454 (3.2174) Cmps_loss: 1.5051 (1.5491) Loss: 16.549 (16.969)
+2025-09-04,08:32:47 | INFO | Train Epoch: 2 [1230848/2826240 (44%)] fLS: 3.060  cLS: 3.401 Ftcs_loss: 12.043 (12.163) Fmps_loss: 3.1445 (3.1992) Cmps_loss: 1.3289 (1.4940) Loss: 16.517 (16.856)
+2025-09-04,08:36:02 | INFO | Train Epoch: 2 [1640448/2826240 (58%)] fLS: 3.081  cLS: 3.437 Ftcs_loss: 11.446 (12.020) Fmps_loss: 3.0870 (3.1768) Cmps_loss: 1.4846 (1.4921) Loss: 16.018 (16.688)
+2025-09-04,08:39:17 | INFO | Train Epoch: 2 [2050048/2826240 (73%)] fLS: 3.102  cLS: 3.471 Ftcs_loss: 10.317 (11.736) Fmps_loss: 2.8427 (3.1211) Cmps_loss: 1.1993 (1.4433) Loss: 14.359 (16.300)
+2025-09-04,08:42:33 | INFO | Train Epoch: 2 [2459648/2826240 (87%)] fLS: 3.121  cLS: 3.499 Ftcs_loss: 11.176 (11.656) Fmps_loss: 2.9309 (3.0939) Cmps_loss: 1.3782 (1.4340) Loss: 15.485 (16.184)
+2025-09-04,08:45:29 | INFO | Train Epoch: 2 [2826240/2826240 (100%)] fLS: 3.137  cLS: 3.522 Ftcs_loss: 10.044 (11.454) Fmps_loss: 2.7168 (3.0468) Cmps_loss: 1.0707 (1.3886) Loss: 13.832 (15.890)
+2025-09-04,08:45:29 | INFO | Start epoch 3
+2025-09-04,08:45:40 | INFO | Train Epoch: 3 [   2048/2826240 (0%)] fLS: 3.137  cLS: 3.522 Ftcs_loss: 9.8584 (9.8584) Fmps_loss: 2.7161 (2.7161) Cmps_loss: 1.2255 (1.2255) Loss: 13.800 (13.800)
+2025-09-04,08:48:56 | INFO | Train Epoch: 3 [ 411648/2826240 (15%)] fLS: 3.155  cLS: 3.548 Ftcs_loss: 10.239 (10.049) Fmps_loss: 2.8338 (2.7749) Cmps_loss: 1.1097 (1.1676) Loss: 14.183 (13.991)
+2025-09-04,08:52:10 | INFO | Train Epoch: 3 [ 821248/2826240 (29%)] fLS: 3.172  cLS: 3.571 Ftcs_loss: 9.6006 (9.8994) Fmps_loss: 2.6494 (2.7331) Cmps_loss: 1.1558 (1.1636) Loss: 13.406 (13.796)
+2025-09-04,08:55:25 | INFO | Train Epoch: 3 [1230848/2826240 (44%)] fLS: 3.189  cLS: 3.592 Ftcs_loss: 9.6996 (9.8495) Fmps_loss: 2.6481 (2.7118) Cmps_loss: 1.0755 (1.1416) Loss: 13.423 (13.703)
+2025-09-04,08:58:39 | INFO | Train Epoch: 3 [1640448/2826240 (58%)] fLS: 3.204  cLS: 3.610 Ftcs_loss: 9.8400 (9.8476) Fmps_loss: 2.6723 (2.7039) Cmps_loss: 1.0534 (1.1240) Loss: 13.566 (13.675)
+2025-09-04,09:01:53 | INFO | Train Epoch: 3 [2050048/2826240 (73%)] fLS: 3.220  cLS: 3.626 Ftcs_loss: 9.9044 (9.8571) Fmps_loss: 2.6932 (2.7021) Cmps_loss: 1.1026 (1.1204) Loss: 13.700 (13.680)
+2025-09-04,09:05:09 | INFO | Train Epoch: 3 [2459648/2826240 (87%)] fLS: 3.235  cLS: 3.640 Ftcs_loss: 9.2724 (9.7735) Fmps_loss: 2.5495 (2.6803) Cmps_loss: 1.0038 (1.1038) Loss: 12.826 (13.558)
+2025-09-04,09:08:03 | INFO | Train Epoch: 3 [2826240/2826240 (100%)] fLS: 3.246  cLS: 3.653 Ftcs_loss: 9.5216 (9.7420) Fmps_loss: 2.6088 (2.6714) Cmps_loss: 1.0069 (1.0916) Loss: 13.137 (13.505)
+2025-09-04,09:09:03 | INFO | Eval Epoch: 4 retrieval_dci_text_to_image_R@1: 0.3254	retrieval_dci_text_to_image_R@5: 0.5605	retrieval_dci_text_to_image_R@10: 0.6541	retrieval_dci_text_to_image_mean_rank: 55.7327	retrieval_dci_text_to_image_median_rank: 4.0000	retrieval_dci_image_to_text_R@1: 0.3512	retrieval_dci_image_to_text_R@5: 0.5850	retrieval_dci_image_to_text_R@10: 0.6735	retrieval_dci_image_to_text_mean_rank: 45.1193	retrieval_dci_image_to_text_median_rank: 3.0000	epoch: 4.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,09:09:04 | INFO | Start epoch 4
+2025-09-04,09:09:07 | INFO | Train Epoch: 4 [   2048/2826240 (0%)] fLS: 3.246  cLS: 3.653 Ftcs_loss: 9.9581 (9.9581) Fmps_loss: 2.6639 (2.6639) Cmps_loss: 1.1092 (1.1092) Loss: 13.731 (13.731)
+2025-09-04,09:12:21 | INFO | Train Epoch: 4 [ 411648/2826240 (15%)] fLS: 3.259  cLS: 3.668 Ftcs_loss: 8.8606 (9.4094) Fmps_loss: 2.4702 (2.5670) Cmps_loss: 0.95614 (1.0327) Loss: 12.287 (13.009)
+2025-09-04,09:15:34 | INFO | Train Epoch: 4 [ 821248/2826240 (29%)] fLS: 3.272  cLS: 3.680 Ftcs_loss: 8.8077 (9.2088) Fmps_loss: 2.4545 (2.5295) Cmps_loss: 0.96125 (1.0089) Loss: 12.224 (12.747)
+2025-09-04,09:18:48 | INFO | Train Epoch: 4 [1230848/2826240 (44%)] fLS: 3.284  cLS: 3.691 Ftcs_loss: 8.8351 (9.1154) Fmps_loss: 2.4332 (2.5054) Cmps_loss: 0.88888 (0.97887) Loss: 12.157 (12.600)
+2025-09-04,09:22:03 | INFO | Train Epoch: 4 [1640448/2826240 (58%)] fLS: 3.295  cLS: 3.701 Ftcs_loss: 8.2377 (8.9399) Fmps_loss: 2.3916 (2.4827) Cmps_loss: 0.99905 (0.98290) Loss: 11.628 (12.405)
+2025-09-04,09:25:18 | INFO | Train Epoch: 4 [2050048/2826240 (73%)] fLS: 3.305  cLS: 3.711 Ftcs_loss: 8.7264 (8.9043) Fmps_loss: 2.3740 (2.4646) Cmps_loss: 0.80928 (0.95397) Loss: 11.910 (12.323)
+2025-09-04,09:28:33 | INFO | Train Epoch: 4 [2459648/2826240 (87%)] fLS: 3.316  cLS: 3.721 Ftcs_loss: 8.3558 (8.8259) Fmps_loss: 2.2944 (2.4403) Cmps_loss: 0.91897 (0.94897) Loss: 11.569 (12.215)
+2025-09-04,09:31:26 | INFO | Train Epoch: 4 [2826240/2826240 (100%)] fLS: 3.324  cLS: 3.727 Ftcs_loss: 9.1794 (8.8701) Fmps_loss: 2.4711 (2.4441) Cmps_loss: 0.93262 (0.94692) Loss: 12.583 (12.261)
+2025-09-04,09:31:26 | INFO | Start epoch 5
+2025-09-04,09:31:38 | INFO | Train Epoch: 5 [   2048/2826240 (0%)] fLS: 3.324  cLS: 3.727 Ftcs_loss: 8.0831 (8.0831) Fmps_loss: 2.2768 (2.2768) Cmps_loss: 0.76850 (0.76850) Loss: 11.128 (11.128)
+2025-09-04,09:34:52 | INFO | Train Epoch: 5 [ 411648/2826240 (15%)] fLS: 3.334  cLS: 3.738 Ftcs_loss: 8.8042 (8.4436) Fmps_loss: 2.3851 (2.3309) Cmps_loss: 0.89917 (0.83383) Loss: 12.088 (11.608)
+2025-09-04,09:38:06 | INFO | Train Epoch: 5 [ 821248/2826240 (29%)] fLS: 3.344  cLS: 3.746 Ftcs_loss: 8.9120 (8.5998) Fmps_loss: 2.3861 (2.3493) Cmps_loss: 0.78492 (0.81753) Loss: 12.083 (11.767)
+2025-09-04,09:41:21 | INFO | Train Epoch: 5 [1230848/2826240 (44%)] fLS: 3.353  cLS: 3.754 Ftcs_loss: 8.1467 (8.4865) Fmps_loss: 2.2886 (2.3342) Cmps_loss: 0.72019 (0.79319) Loss: 11.155 (11.614)
+2025-09-04,09:44:36 | INFO | Train Epoch: 5 [1640448/2826240 (58%)] fLS: 3.361  cLS: 3.760 Ftcs_loss: 8.1173 (8.4127) Fmps_loss: 2.3438 (2.3361) Cmps_loss: 0.86719 (0.80799) Loss: 11.328 (11.557)
+2025-09-04,09:47:50 | INFO | Train Epoch: 5 [2050048/2826240 (73%)] fLS: 3.369  cLS: 3.767 Ftcs_loss: 8.3745 (8.4063) Fmps_loss: 2.3458 (2.3377) Cmps_loss: 0.95075 (0.83179) Loss: 11.671 (11.576)
+2025-09-04,09:51:04 | INFO | Train Epoch: 5 [2459648/2826240 (87%)] fLS: 3.377  cLS: 3.772 Ftcs_loss: 8.4863 (8.4177) Fmps_loss: 2.3254 (2.3360) Cmps_loss: 0.80349 (0.82774) Loss: 11.615 (11.581)
+2025-09-04,09:53:59 | INFO | Train Epoch: 5 [2826240/2826240 (100%)] fLS: 3.383  cLS: 3.777 Ftcs_loss: 8.2593 (8.3979) Fmps_loss: 2.2791 (2.3289) Cmps_loss: 0.76847 (0.82033) Loss: 11.307 (11.547)
+2025-09-04,09:54:57 | INFO | Eval Epoch: 6 retrieval_dci_text_to_image_R@1: 0.3532	retrieval_dci_text_to_image_R@5: 0.5810	retrieval_dci_text_to_image_R@10: 0.6762	retrieval_dci_text_to_image_mean_rank: 50.2652	retrieval_dci_text_to_image_median_rank: 3.0000	retrieval_dci_image_to_text_R@1: 0.3823	retrieval_dci_image_to_text_R@5: 0.6168	retrieval_dci_image_to_text_R@10: 0.7135	retrieval_dci_image_to_text_mean_rank: 36.0168	retrieval_dci_image_to_text_median_rank: 3.0000	epoch: 6.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,09:54:57 | INFO | Start epoch 6
+2025-09-04,09:55:00 | INFO | Train Epoch: 6 [   2048/2826240 (0%)] fLS: 3.383  cLS: 3.777 Ftcs_loss: 7.5822 (7.5822) Fmps_loss: 2.1910 (2.1910) Cmps_loss: 0.85974 (0.85974) Loss: 10.633 (10.633)
+2025-09-04,09:58:13 | INFO | Train Epoch: 6 [ 411648/2826240 (15%)] fLS: 3.391  cLS: 3.784 Ftcs_loss: 7.8893 (7.7357) Fmps_loss: 2.1970 (2.1940) Cmps_loss: 0.86456 (0.86215) Loss: 10.951 (10.792)
+2025-09-04,10:01:27 | INFO | Train Epoch: 6 [ 821248/2826240 (29%)] fLS: 3.399  cLS: 3.790 Ftcs_loss: 7.9866 (7.8193) Fmps_loss: 2.2107 (2.1996) Cmps_loss: 0.76554 (0.82995) Loss: 10.963 (10.849)
+2025-09-04,10:04:42 | INFO | Train Epoch: 6 [1230848/2826240 (44%)] fLS: 3.406  cLS: 3.796 Ftcs_loss: 8.1779 (7.9090) Fmps_loss: 2.3089 (2.2269) Cmps_loss: 0.87523 (0.84127) Loss: 11.362 (10.977)
+2025-09-04,10:07:57 | INFO | Train Epoch: 6 [1640448/2826240 (58%)] fLS: 3.413  cLS: 3.801 Ftcs_loss: 8.2652 (7.9802) Fmps_loss: 2.2453 (2.2306) Cmps_loss: 0.75694 (0.82440) Loss: 11.267 (11.035)
+2025-09-04,10:11:13 | INFO | Train Epoch: 6 [2050048/2826240 (73%)] fLS: 3.419  cLS: 3.805 Ftcs_loss: 7.6323 (7.9222) Fmps_loss: 2.2010 (2.2257) Cmps_loss: 0.78738 (0.81823) Loss: 10.621 (10.966)
+2025-09-04,10:14:28 | INFO | Train Epoch: 6 [2459648/2826240 (87%)] fLS: 3.426  cLS: 3.808 Ftcs_loss: 8.0943 (7.9468) Fmps_loss: 2.2558 (2.2300) Cmps_loss: 0.80043 (0.81569) Loss: 11.151 (10.992)
+2025-09-04,10:17:23 | INFO | Train Epoch: 6 [2826240/2826240 (100%)] fLS: 3.431  cLS: 3.812 Ftcs_loss: 7.7734 (7.9251) Fmps_loss: 2.1583 (2.2210) Cmps_loss: 0.70264 (0.80156) Loss: 10.634 (10.948)
+2025-09-04,10:17:23 | INFO | Start epoch 7
+2025-09-04,10:17:32 | INFO | Train Epoch: 7 [   2048/2826240 (0%)] fLS: 3.431  cLS: 3.812 Ftcs_loss: 7.6549 (7.6549) Fmps_loss: 2.1258 (2.1258) Cmps_loss: 0.68955 (0.68955) Loss: 10.470 (10.470)
+2025-09-04,10:20:49 | INFO | Train Epoch: 7 [ 411648/2826240 (15%)] fLS: 3.439  cLS: 3.818 Ftcs_loss: 7.2575 (7.4562) Fmps_loss: 2.0762 (2.1010) Cmps_loss: 0.74534 (0.71744) Loss: 10.079 (10.275)
+2025-09-04,10:24:03 | INFO | Train Epoch: 7 [ 821248/2826240 (29%)] fLS: 3.445  cLS: 3.823 Ftcs_loss: 7.6404 (7.5176) Fmps_loss: 2.0846 (2.0955) Cmps_loss: 0.59671 (0.67720) Loss: 10.322 (10.290)
+2025-09-04,10:27:18 | INFO | Train Epoch: 7 [1230848/2826240 (44%)] fLS: 3.452  cLS: 3.827 Ftcs_loss: 8.3517 (7.7261) Fmps_loss: 2.2827 (2.1423) Cmps_loss: 0.83064 (0.71556) Loss: 11.465 (10.584)
+2025-09-04,10:30:33 | INFO | Train Epoch: 7 [1640448/2826240 (58%)] fLS: 3.457  cLS: 3.830 Ftcs_loss: 7.5890 (7.6987) Fmps_loss: 2.1531 (2.1445) Cmps_loss: 0.73182 (0.71881) Loss: 10.474 (10.562)
+2025-09-04,10:33:47 | INFO | Train Epoch: 7 [2050048/2826240 (73%)] fLS: 3.462  cLS: 3.834 Ftcs_loss: 7.7696 (7.7105) Fmps_loss: 2.1727 (2.1492) Cmps_loss: 0.83312 (0.73786) Loss: 10.775 (10.598)
+2025-09-04,10:37:02 | INFO | Train Epoch: 7 [2459648/2826240 (87%)] fLS: 3.467  cLS: 3.836 Ftcs_loss: 8.0831 (7.7637) Fmps_loss: 2.1535 (2.1498) Cmps_loss: 0.69022 (0.73106) Loss: 10.927 (10.645)
+2025-09-04,10:39:57 | INFO | Train Epoch: 7 [2826240/2826240 (100%)] fLS: 3.471  cLS: 3.839 Ftcs_loss: 7.8730 (7.7774) Fmps_loss: 2.1316 (2.1475) Cmps_loss: 0.77084 (0.73603) Loss: 10.775 (10.661)
+2025-09-04,10:40:56 | INFO | Eval Epoch: 8 retrieval_dci_text_to_image_R@1: 0.3772	retrieval_dci_text_to_image_R@5: 0.6045	retrieval_dci_text_to_image_R@10: 0.6921	retrieval_dci_text_to_image_mean_rank: 47.7798	retrieval_dci_text_to_image_median_rank: 3.0000	retrieval_dci_image_to_text_R@1: 0.4145	retrieval_dci_image_to_text_R@5: 0.6441	retrieval_dci_image_to_text_R@10: 0.7340	retrieval_dci_image_to_text_mean_rank: 35.2911	retrieval_dci_image_to_text_median_rank: 2.0000	epoch: 8.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,10:40:58 | INFO | Start epoch 8
+2025-09-04,10:41:01 | INFO | Train Epoch: 8 [   2048/2826240 (0%)] fLS: 3.472  cLS: 3.839 Ftcs_loss: 7.3147 (7.3147) Fmps_loss: 2.0543 (2.0543) Cmps_loss: 0.71945 (0.71945) Loss: 10.088 (10.088)
+2025-09-04,10:44:15 | INFO | Train Epoch: 8 [ 411648/2826240 (15%)] fLS: 3.477  cLS: 3.844 Ftcs_loss: 7.0048 (7.1598) Fmps_loss: 2.0083 (2.0313) Cmps_loss: 0.65319 (0.68632) Loss: 9.6664 (9.8774)
+2025-09-04,10:47:30 | INFO | Train Epoch: 8 [ 821248/2826240 (29%)] fLS: 3.483  cLS: 3.849 Ftcs_loss: 7.3716 (7.2304) Fmps_loss: 2.0794 (2.0473) Cmps_loss: 0.67685 (0.68316) Loss: 10.128 (9.9609)
+2025-09-04,10:50:45 | INFO | Train Epoch: 8 [1230848/2826240 (44%)] fLS: 3.488  cLS: 3.852 Ftcs_loss: 7.6252 (7.3291) Fmps_loss: 2.1252 (2.0668) Cmps_loss: 0.65307 (0.67564) Loss: 10.403 (10.072)
+2025-09-04,10:53:58 | INFO | Train Epoch: 8 [1640448/2826240 (58%)] fLS: 3.493  cLS: 3.855 Ftcs_loss: 7.0162 (7.2665) Fmps_loss: 2.0038 (2.0542) Cmps_loss: 0.67560 (0.67563) Loss: 9.6957 (9.9964)
+2025-09-04,10:57:12 | INFO | Train Epoch: 8 [2050048/2826240 (73%)] fLS: 3.498  cLS: 3.857 Ftcs_loss: 7.3287 (7.2769) Fmps_loss: 2.0527 (2.0539) Cmps_loss: 0.63636 (0.66909) Loss: 10.018 (9.9999)
+2025-09-04,11:00:27 | INFO | Train Epoch: 8 [2459648/2826240 (87%)] fLS: 3.502  cLS: 3.860 Ftcs_loss: 7.5200 (7.3116) Fmps_loss: 2.0821 (2.0580) Cmps_loss: 0.80860 (0.68902) Loss: 10.411 (10.059)
+2025-09-04,11:03:22 | INFO | Train Epoch: 8 [2826240/2826240 (100%)] fLS: 3.505  cLS: 3.862 Ftcs_loss: 7.0948 (7.2845) Fmps_loss: 2.0012 (2.0509) Cmps_loss: 0.70997 (0.69164) Loss: 9.8059 (10.027)
+2025-09-04,11:03:22 | INFO | Start epoch 9
+2025-09-04,11:03:33 | INFO | Train Epoch: 9 [   2048/2826240 (0%)] fLS: 3.505  cLS: 3.862 Ftcs_loss: 6.6840 (6.6840) Fmps_loss: 1.9250 (1.9250) Cmps_loss: 0.64418 (0.64418) Loss: 9.2532 (9.2532)
+2025-09-04,11:06:47 | INFO | Train Epoch: 9 [ 411648/2826240 (15%)] fLS: 3.510  cLS: 3.867 Ftcs_loss: 7.3498 (7.0169) Fmps_loss: 2.0899 (2.0074) Cmps_loss: 0.75385 (0.69902) Loss: 10.193 (9.7233)
+2025-09-04,11:10:01 | INFO | Train Epoch: 9 [ 821248/2826240 (29%)] fLS: 3.515  cLS: 3.871 Ftcs_loss: 6.7540 (6.9293) Fmps_loss: 1.9709 (1.9952) Cmps_loss: 0.63819 (0.67874) Loss: 9.3631 (9.6032)
+2025-09-04,11:13:16 | INFO | Train Epoch: 9 [1230848/2826240 (44%)] fLS: 3.519  cLS: 3.874 Ftcs_loss: 6.9326 (6.9301) Fmps_loss: 1.9972 (1.9957) Cmps_loss: 0.69900 (0.68381) Loss: 9.6288 (9.6096)
+2025-09-04,11:16:31 | INFO | Train Epoch: 9 [1640448/2826240 (58%)] fLS: 3.524  cLS: 3.877 Ftcs_loss: 7.2640 (6.9969) Fmps_loss: 1.9943 (1.9954) Cmps_loss: 0.70547 (0.68814) Loss: 9.9637 (9.6805)
+2025-09-04,11:19:46 | INFO | Train Epoch: 9 [2050048/2826240 (73%)] fLS: 3.528  cLS: 3.880 Ftcs_loss: 6.7792 (6.9606) Fmps_loss: 1.9947 (1.9953) Cmps_loss: 0.71433 (0.69250) Loss: 9.4882 (9.6484)
+2025-09-04,11:23:01 | INFO | Train Epoch: 9 [2459648/2826240 (87%)] fLS: 3.532  cLS: 3.882 Ftcs_loss: 7.3075 (7.0101) Fmps_loss: 2.0485 (2.0029) Cmps_loss: 0.73257 (0.69823) Loss: 10.089 (9.7113)
+2025-09-04,11:25:56 | INFO | Train Epoch: 9 [2826240/2826240 (100%)] fLS: 3.535  cLS: 3.885 Ftcs_loss: 7.2719 (7.0429) Fmps_loss: 2.0641 (2.0106) Cmps_loss: 0.65739 (0.69312) Loss: 9.9934 (9.7466)
+2025-09-04,11:26:55 | INFO | Eval Epoch: 10 retrieval_dci_text_to_image_R@1: 0.4164	retrieval_dci_text_to_image_R@5: 0.6496	retrieval_dci_text_to_image_R@10: 0.7334	retrieval_dci_text_to_image_mean_rank: 35.9980	retrieval_dci_text_to_image_median_rank: 2.0000	retrieval_dci_image_to_text_R@1: 0.4343	retrieval_dci_image_to_text_R@5: 0.6753	retrieval_dci_image_to_text_R@10: 0.7534	retrieval_dci_image_to_text_mean_rank: 29.8492	retrieval_dci_image_to_text_median_rank: 2.0000	epoch: 10.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,11:26:55 | INFO | Start epoch 10
+2025-09-04,11:26:58 | INFO | Train Epoch: 10 [   2048/2826240 (0%)] fLS: 3.535  cLS: 3.885 Ftcs_loss: 6.7753 (6.7753) Fmps_loss: 1.9391 (1.9391) Cmps_loss: 0.50687 (0.50687) Loss: 9.2213 (9.2213)
+2025-09-04,11:30:12 | INFO | Train Epoch: 10 [ 411648/2826240 (15%)] fLS: 3.540  cLS: 3.890 Ftcs_loss: 6.9620 (6.8687) Fmps_loss: 1.9957 (1.9674) Cmps_loss: 0.71650 (0.61168) Loss: 9.6742 (9.4478)
+2025-09-04,11:33:27 | INFO | Train Epoch: 10 [ 821248/2826240 (29%)] fLS: 3.544  cLS: 3.894 Ftcs_loss: 6.8865 (6.8746) Fmps_loss: 1.9255 (1.9534) Cmps_loss: 0.76229 (0.66189) Loss: 9.5742 (9.4899)
+2025-09-04,11:36:42 | INFO | Train Epoch: 10 [1230848/2826240 (44%)] fLS: 3.547  cLS: 3.897 Ftcs_loss: 7.1391 (6.9407) Fmps_loss: 1.9839 (1.9610) Cmps_loss: 0.60880 (0.64862) Loss: 9.7318 (9.5504)
+2025-09-04,11:39:58 | INFO | Train Epoch: 10 [1640448/2826240 (58%)] fLS: 3.551  cLS: 3.899 Ftcs_loss: 7.0654 (6.9657) Fmps_loss: 1.9840 (1.9656) Cmps_loss: 0.54222 (0.62734) Loss: 9.5916 (9.5586)
+2025-09-04,11:43:11 | INFO | Train Epoch: 10 [2050048/2826240 (73%)] fLS: 3.555  cLS: 3.902 Ftcs_loss: 7.1352 (6.9939) Fmps_loss: 2.0112 (1.9732) Cmps_loss: 0.61571 (0.62540) Loss: 9.7621 (9.5925)
+2025-09-04,11:46:27 | INFO | Train Epoch: 10 [2459648/2826240 (87%)] fLS: 3.558  cLS: 3.905 Ftcs_loss: 7.0691 (7.0047) Fmps_loss: 2.0291 (1.9812) Cmps_loss: 0.62067 (0.62472) Loss: 9.7189 (9.6106)
+2025-09-04,11:49:22 | INFO | Train Epoch: 10 [2826240/2826240 (100%)] fLS: 3.561  cLS: 3.908 Ftcs_loss: 6.0701 (6.8878) Fmps_loss: 1.8355 (1.9630) Cmps_loss: 0.61689 (0.62374) Loss: 8.5225 (9.4746)
+2025-09-04,11:49:23 | INFO | Start epoch 11
+2025-09-04,11:49:33 | INFO | Train Epoch: 11 [   2048/2826240 (0%)] fLS: 3.561  cLS: 3.908 Ftcs_loss: 6.5117 (6.5117) Fmps_loss: 1.8736 (1.8736) Cmps_loss: 0.54352 (0.54352) Loss: 8.9288 (8.9288)
+2025-09-04,11:52:48 | INFO | Train Epoch: 11 [ 411648/2826240 (15%)] fLS: 3.565  cLS: 3.912 Ftcs_loss: 6.8460 (6.6788) Fmps_loss: 1.9344 (1.9040) Cmps_loss: 0.59919 (0.57135) Loss: 9.3796 (9.1542)
+2025-09-04,11:56:02 | INFO | Train Epoch: 11 [ 821248/2826240 (29%)] fLS: 3.569  cLS: 3.916 Ftcs_loss: 5.9944 (6.4507) Fmps_loss: 1.7994 (1.8691) Cmps_loss: 0.62186 (0.58819) Loss: 8.4156 (8.9080)
+2025-09-04,11:59:16 | INFO | Train Epoch: 11 [1230848/2826240 (44%)] fLS: 3.572  cLS: 3.919 Ftcs_loss: 7.0126 (6.5912) Fmps_loss: 1.9872 (1.8986) Cmps_loss: 0.61842 (0.59575) Loss: 9.6182 (9.0855)
+2025-09-04,12:02:31 | INFO | Train Epoch: 11 [1640448/2826240 (58%)] fLS: 3.576  cLS: 3.922 Ftcs_loss: 6.4565 (6.5642) Fmps_loss: 1.8635 (1.8916) Cmps_loss: 0.48624 (0.57385) Loss: 8.8062 (9.0297)
+2025-09-04,12:05:45 | INFO | Train Epoch: 11 [2050048/2826240 (73%)] fLS: 3.579  cLS: 3.925 Ftcs_loss: 7.2095 (6.6718) Fmps_loss: 2.0039 (1.9103) Cmps_loss: 0.53617 (0.56757) Loss: 9.7496 (9.1496)
+2025-09-04,12:08:59 | INFO | Train Epoch: 11 [2459648/2826240 (87%)] fLS: 3.582  cLS: 3.927 Ftcs_loss: 6.6605 (6.6702) Fmps_loss: 1.8623 (1.9035) Cmps_loss: 0.53730 (0.56324) Loss: 9.0601 (9.1369)
+2025-09-04,12:11:54 | INFO | Train Epoch: 11 [2826240/2826240 (100%)] fLS: 3.584  cLS: 3.928 Ftcs_loss: 6.5769 (6.6585) Fmps_loss: 1.8392 (1.8954) Cmps_loss: 0.59730 (0.56750) Loss: 9.0134 (9.1214)
+2025-09-04,12:12:53 | INFO | Eval Epoch: 12 retrieval_dci_text_to_image_R@1: 0.4397	retrieval_dci_text_to_image_R@5: 0.6693	retrieval_dci_text_to_image_R@10: 0.7563	retrieval_dci_text_to_image_mean_rank: 32.3225	retrieval_dci_text_to_image_median_rank: 2.0000	retrieval_dci_image_to_text_R@1: 0.4484	retrieval_dci_image_to_text_R@5: 0.6861	retrieval_dci_image_to_text_R@10: 0.7658	retrieval_dci_image_to_text_mean_rank: 26.7056	retrieval_dci_image_to_text_median_rank: 2.0000	epoch: 12.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,12:12:54 | INFO | Start epoch 12
+2025-09-04,12:12:57 | INFO | Train Epoch: 12 [   2048/2826240 (0%)] fLS: 3.584  cLS: 3.929 Ftcs_loss: 6.6502 (6.6502) Fmps_loss: 1.9349 (1.9349) Cmps_loss: 0.50447 (0.50447) Loss: 9.0896 (9.0896)
+2025-09-04,12:16:10 | INFO | Train Epoch: 12 [ 411648/2826240 (15%)] fLS: 3.588  cLS: 3.933 Ftcs_loss: 6.6220 (6.6361) Fmps_loss: 1.9579 (1.9464) Cmps_loss: 0.51531 (0.50989) Loss: 9.0952 (9.0924)
+2025-09-04,12:19:24 | INFO | Train Epoch: 12 [ 821248/2826240 (29%)] fLS: 3.591  cLS: 3.937 Ftcs_loss: 6.6262 (6.6328) Fmps_loss: 1.8938 (1.9289) Cmps_loss: 0.61494 (0.54491) Loss: 9.1350 (9.1066)
+2025-09-04,12:22:37 | INFO | Train Epoch: 12 [1230848/2826240 (44%)] fLS: 3.594  cLS: 3.940 Ftcs_loss: 6.8219 (6.6801) Fmps_loss: 1.9560 (1.9356) Cmps_loss: 0.62567 (0.56510) Loss: 9.4036 (9.1808)
+2025-09-04,12:25:51 | INFO | Train Epoch: 12 [1640448/2826240 (58%)] fLS: 3.598  cLS: 3.943 Ftcs_loss: 6.4483 (6.6337) Fmps_loss: 1.8460 (1.9177) Cmps_loss: 0.59551 (0.57118) Loss: 8.8898 (9.1226)
+2025-09-04,12:29:05 | INFO | Train Epoch: 12 [2050048/2826240 (73%)] fLS: 3.600  cLS: 3.945 Ftcs_loss: 6.8103 (6.6632) Fmps_loss: 1.9180 (1.9178) Cmps_loss: 0.60157 (0.57625) Loss: 9.3299 (9.1572)
+2025-09-04,12:32:20 | INFO | Train Epoch: 12 [2459648/2826240 (87%)] fLS: 3.603  cLS: 3.947 Ftcs_loss: 6.2040 (6.5976) Fmps_loss: 1.8623 (1.9098) Cmps_loss: 0.47773 (0.56217) Loss: 8.5440 (9.0696)
+2025-09-04,12:35:16 | INFO | Train Epoch: 12 [2826240/2826240 (100%)] fLS: 3.606  cLS: 3.949 Ftcs_loss: 6.6976 (6.6101) Fmps_loss: 1.9113 (1.9100) Cmps_loss: 0.58919 (0.56555) Loss: 9.1981 (9.0856)
+2025-09-04,12:35:16 | INFO | Start epoch 13
+2025-09-04,12:35:26 | INFO | Train Epoch: 13 [   2048/2826240 (0%)] fLS: 3.606  cLS: 3.949 Ftcs_loss: 6.4527 (6.4527) Fmps_loss: 1.8506 (1.8506) Cmps_loss: 0.47378 (0.47378) Loss: 8.7771 (8.7771)
+2025-09-04,12:38:41 | INFO | Train Epoch: 13 [ 411648/2826240 (15%)] fLS: 3.609  cLS: 3.953 Ftcs_loss: 6.2566 (6.3546) Fmps_loss: 1.7453 (1.7979) Cmps_loss: 0.39460 (0.43419) Loss: 8.3965 (8.5868)
+2025-09-04,12:41:56 | INFO | Train Epoch: 13 [ 821248/2826240 (29%)] fLS: 3.612  cLS: 3.956 Ftcs_loss: 6.5949 (6.4347) Fmps_loss: 1.8903 (1.8287) Cmps_loss: 0.58465 (0.48434) Loss: 9.0698 (8.7478)
+2025-09-04,12:45:11 | INFO | Train Epoch: 13 [1230848/2826240 (44%)] fLS: 3.615  cLS: 3.959 Ftcs_loss: 6.8076 (6.5279) Fmps_loss: 1.9435 (1.8574) Cmps_loss: 0.53215 (0.49629) Loss: 9.2833 (8.8817)
+2025-09-04,12:48:25 | INFO | Train Epoch: 13 [1640448/2826240 (58%)] fLS: 3.618  cLS: 3.962 Ftcs_loss: 6.0549 (6.4333) Fmps_loss: 1.7868 (1.8433) Cmps_loss: 0.49414 (0.49586) Loss: 8.3359 (8.7725)
+2025-09-04,12:51:38 | INFO | Train Epoch: 13 [2050048/2826240 (73%)] fLS: 3.621  cLS: 3.964 Ftcs_loss: 6.1906 (6.3929) Fmps_loss: 1.7540 (1.8284) Cmps_loss: 0.56664 (0.50766) Loss: 8.5113 (8.7290)
+2025-09-04,12:54:53 | INFO | Train Epoch: 13 [2459648/2826240 (87%)] fLS: 3.623  cLS: 3.967 Ftcs_loss: 6.3240 (6.3830) Fmps_loss: 1.7681 (1.8198) Cmps_loss: 0.56329 (0.51561) Loss: 8.6554 (8.7185)
+2025-09-04,12:57:47 | INFO | Train Epoch: 13 [2826240/2826240 (100%)] fLS: 3.626  cLS: 3.969 Ftcs_loss: 6.3699 (6.3814) Fmps_loss: 1.8254 (1.8205) Cmps_loss: 0.45755 (0.50835) Loss: 8.6528 (8.7102)
+2025-09-04,12:58:45 | INFO | Eval Epoch: 14 retrieval_dci_text_to_image_R@1: 0.4565	retrieval_dci_text_to_image_R@5: 0.6842	retrieval_dci_text_to_image_R@10: 0.7684	retrieval_dci_text_to_image_mean_rank: 28.8856	retrieval_dci_text_to_image_median_rank: 2.0000	retrieval_dci_image_to_text_R@1: 0.4808	retrieval_dci_image_to_text_R@5: 0.7144	retrieval_dci_image_to_text_R@10: 0.7913	retrieval_dci_image_to_text_mean_rank: 21.8898	retrieval_dci_image_to_text_median_rank: 2.0000	epoch: 14.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,12:58:45 | INFO | Start epoch 14
+2025-09-04,12:58:48 | INFO | Train Epoch: 14 [   2048/2826240 (0%)] fLS: 3.626  cLS: 3.969 Ftcs_loss: 6.4167 (6.4167) Fmps_loss: 1.8239 (1.8239) Cmps_loss: 0.45025 (0.45025) Loss: 8.6909 (8.6909)
+2025-09-04,13:02:02 | INFO | Train Epoch: 14 [ 411648/2826240 (15%)] fLS: 3.628  cLS: 3.973 Ftcs_loss: 6.0470 (6.2319) Fmps_loss: 1.7392 (1.7816) Cmps_loss: 0.50573 (0.47799) Loss: 8.2920 (8.4914)
+2025-09-04,13:05:16 | INFO | Train Epoch: 14 [ 821248/2826240 (29%)] fLS: 3.631  cLS: 3.976 Ftcs_loss: 5.9155 (6.1264) Fmps_loss: 1.7050 (1.7560) Cmps_loss: 0.47587 (0.47728) Loss: 8.0964 (8.3598)
+2025-09-04,13:08:30 | INFO | Train Epoch: 14 [1230848/2826240 (44%)] fLS: 3.634  cLS: 3.979 Ftcs_loss: 6.7368 (6.2790) Fmps_loss: 1.8897 (1.7895) Cmps_loss: 0.49877 (0.48265) Loss: 9.1253 (8.5511)
+2025-09-04,13:11:45 | INFO | Train Epoch: 14 [1640448/2826240 (58%)] fLS: 3.637  cLS: 3.981 Ftcs_loss: 5.5529 (6.1338) Fmps_loss: 1.6723 (1.7660) Cmps_loss: 0.46602 (0.47933) Loss: 7.6912 (8.3791)
+2025-09-04,13:14:59 | INFO | Train Epoch: 14 [2050048/2826240 (73%)] fLS: 3.639  cLS: 3.984 Ftcs_loss: 6.2429 (6.1520) Fmps_loss: 1.8203 (1.7751) Cmps_loss: 0.52550 (0.48702) Loss: 8.5886 (8.4141)
+2025-09-04,13:18:14 | INFO | Train Epoch: 14 [2459648/2826240 (87%)] fLS: 3.641  cLS: 3.986 Ftcs_loss: 6.1411 (6.1504) Fmps_loss: 1.7786 (1.7756) Cmps_loss: 0.49318 (0.48790) Loss: 8.4129 (8.4139)
+2025-09-04,13:21:09 | INFO | Train Epoch: 14 [2826240/2826240 (100%)] fLS: 3.644  cLS: 3.988 Ftcs_loss: 5.9863 (6.1299) Fmps_loss: 1.8106 (1.7800) Cmps_loss: 0.52458 (0.49249) Loss: 8.3215 (8.4023)
+2025-09-04,13:21:09 | INFO | Start epoch 15
+2025-09-04,13:21:21 | INFO | Train Epoch: 15 [   2048/2826240 (0%)] fLS: 3.644  cLS: 3.988 Ftcs_loss: 5.9038 (5.9038) Fmps_loss: 1.7443 (1.7443) Cmps_loss: 0.44273 (0.44273) Loss: 8.0909 (8.0909)
+2025-09-04,13:24:35 | INFO | Train Epoch: 15 [ 411648/2826240 (15%)] fLS: 3.647  cLS: 3.992 Ftcs_loss: 6.0214 (5.9626) Fmps_loss: 1.7418 (1.7430) Cmps_loss: 0.43839 (0.44056) Loss: 8.2016 (8.1462)
+2025-09-04,13:27:50 | INFO | Train Epoch: 15 [ 821248/2826240 (29%)] fLS: 3.650  cLS: 3.995 Ftcs_loss: 5.5771 (5.8341) Fmps_loss: 1.7013 (1.7291) Cmps_loss: 0.43404 (0.43839) Loss: 7.7124 (8.0016)
+2025-09-04,13:31:05 | INFO | Train Epoch: 15 [1230848/2826240 (44%)] fLS: 3.653  cLS: 3.998 Ftcs_loss: 6.0689 (5.8928) Fmps_loss: 1.7277 (1.7288) Cmps_loss: 0.55811 (0.46832) Loss: 8.3547 (8.0899)
+2025-09-04,13:34:19 | INFO | Train Epoch: 15 [1640448/2826240 (58%)] fLS: 3.656  cLS: 4.000 Ftcs_loss: 6.1021 (5.9347) Fmps_loss: 1.8494 (1.7529) Cmps_loss: 0.58202 (0.49106) Loss: 8.5335 (8.1786)
+2025-09-04,13:37:32 | INFO | Train Epoch: 15 [2050048/2826240 (73%)] fLS: 3.658  cLS: 4.000 Ftcs_loss: 5.8759 (5.9249) Fmps_loss: 1.7413 (1.7509) Cmps_loss: 0.42607 (0.48023) Loss: 8.0432 (8.1561)
+2025-09-04,13:40:46 | INFO | Train Epoch: 15 [2459648/2826240 (87%)] fLS: 3.660  cLS: 4.000 Ftcs_loss: 5.9308 (5.9257) Fmps_loss: 1.7128 (1.7455) Cmps_loss: 0.44671 (0.47544) Loss: 8.0903 (8.1467)
+2025-09-04,13:43:40 | INFO | Train Epoch: 15 [2826240/2826240 (100%)] fLS: 3.663  cLS: 4.000 Ftcs_loss: 5.7269 (5.9009) Fmps_loss: 1.7114 (1.7412) Cmps_loss: 0.54712 (0.48440) Loss: 7.9854 (8.1265)
+2025-09-04,13:44:38 | INFO | Eval Epoch: 16 retrieval_dci_text_to_image_R@1: 0.4561	retrieval_dci_text_to_image_R@5: 0.6851	retrieval_dci_text_to_image_R@10: 0.7663	retrieval_dci_text_to_image_mean_rank: 29.6040	retrieval_dci_text_to_image_median_rank: 2.0000	retrieval_dci_image_to_text_R@1: 0.4839	retrieval_dci_image_to_text_R@5: 0.7192	retrieval_dci_image_to_text_R@10: 0.7959	retrieval_dci_image_to_text_mean_rank: 23.2924	retrieval_dci_image_to_text_median_rank: 2.0000	epoch: 16.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,13:44:40 | INFO | Start epoch 16
+2025-09-04,13:44:43 | INFO | Train Epoch: 16 [   2048/2826240 (0%)] fLS: 3.663  cLS: 4.000 Ftcs_loss: 5.6422 (5.6422) Fmps_loss: 1.6731 (1.6731) Cmps_loss: 0.40742 (0.40742) Loss: 7.7227 (7.7227)
+2025-09-04,13:47:56 | INFO | Train Epoch: 16 [ 411648/2826240 (15%)] fLS: 3.666  cLS: 4.000 Ftcs_loss: 5.5856 (5.6139) Fmps_loss: 1.6879 (1.6805) Cmps_loss: 0.41587 (0.41164) Loss: 7.6894 (7.7060)
+2025-09-04,13:51:10 | INFO | Train Epoch: 16 [ 821248/2826240 (29%)] fLS: 3.668  cLS: 4.000 Ftcs_loss: 5.2982 (5.5087) Fmps_loss: 1.5730 (1.6447) Cmps_loss: 0.39573 (0.40634) Loss: 7.2670 (7.5597)
+2025-09-04,13:54:25 | INFO | Train Epoch: 16 [1230848/2826240 (44%)] fLS: 3.671  cLS: 4.000 Ftcs_loss: 6.2381 (5.6910) Fmps_loss: 1.7676 (1.6754) Cmps_loss: 0.56881 (0.44696) Loss: 8.5746 (7.8134)
+2025-09-04,13:57:39 | INFO | Train Epoch: 16 [1640448/2826240 (58%)] fLS: 3.673  cLS: 4.000 Ftcs_loss: 5.5858 (5.6700) Fmps_loss: 1.7335 (1.6871) Cmps_loss: 0.51371 (0.46031) Loss: 7.8331 (7.8173)
+2025-09-04,14:00:53 | INFO | Train Epoch: 16 [2050048/2826240 (73%)] fLS: 3.675  cLS: 4.000 Ftcs_loss: 5.8066 (5.6927) Fmps_loss: 1.6997 (1.6892) Cmps_loss: 0.47367 (0.46253) Loss: 7.9800 (7.8444)
+2025-09-04,14:04:08 | INFO | Train Epoch: 16 [2459648/2826240 (87%)] fLS: 3.677  cLS: 4.000 Ftcs_loss: 5.8541 (5.7158) Fmps_loss: 1.6964 (1.6902) Cmps_loss: 0.52575 (0.47156) Loss: 8.0762 (7.8776)
+2025-09-04,14:07:04 | INFO | Train Epoch: 16 [2826240/2826240 (100%)] fLS: 3.679  cLS: 4.000 Ftcs_loss: 5.7437 (5.7193) Fmps_loss: 1.6668 (1.6873) Cmps_loss: 0.50677 (0.47597) Loss: 7.9173 (7.8825)
+2025-09-04,14:07:04 | INFO | Start epoch 17
+2025-09-04,14:07:12 | INFO | Train Epoch: 17 [   2048/2826240 (0%)] fLS: 3.679  cLS: 4.000 Ftcs_loss: 5.2219 (5.2219) Fmps_loss: 1.5704 (1.5704) Cmps_loss: 0.46377 (0.46377) Loss: 7.2560 (7.2560)
+2025-09-04,14:10:27 | INFO | Train Epoch: 17 [ 411648/2826240 (15%)] fLS: 3.682  cLS: 4.000 Ftcs_loss: 5.8108 (5.5163) Fmps_loss: 1.7059 (1.6381) Cmps_loss: 0.43748 (0.45063) Loss: 7.9542 (7.6051)
+2025-09-04,14:13:41 | INFO | Train Epoch: 17 [ 821248/2826240 (29%)] fLS: 3.685  cLS: 4.000 Ftcs_loss: 5.6622 (5.5650) Fmps_loss: 1.6972 (1.6578) Cmps_loss: 0.38118 (0.42748) Loss: 7.7407 (7.6503)
+2025-09-04,14:16:56 | INFO | Train Epoch: 17 [1230848/2826240 (44%)] fLS: 3.687  cLS: 4.000 Ftcs_loss: 5.5655 (5.5651) Fmps_loss: 1.6309 (1.6511) Cmps_loss: 0.40761 (0.42251) Loss: 7.6041 (7.6387)
+2025-09-04,14:20:11 | INFO | Train Epoch: 17 [1640448/2826240 (58%)] fLS: 3.690  cLS: 4.000 Ftcs_loss: 5.8085 (5.6138) Fmps_loss: 1.6564 (1.6522) Cmps_loss: 0.37773 (0.41355) Loss: 7.8427 (7.6795)
+2025-09-04,14:23:26 | INFO | Train Epoch: 17 [2050048/2826240 (73%)] fLS: 3.693  cLS: 4.000 Ftcs_loss: 5.6393 (5.6180) Fmps_loss: 1.6605 (1.6535) Cmps_loss: 0.45291 (0.42011) Loss: 7.7527 (7.6917)
+2025-09-04,14:26:42 | INFO | Train Epoch: 17 [2459648/2826240 (87%)] fLS: 3.695  cLS: 4.000 Ftcs_loss: 5.8744 (5.6547) Fmps_loss: 1.6461 (1.6525) Cmps_loss: 0.42460 (0.42075) Loss: 7.9451 (7.7279)
+2025-09-04,14:29:38 | INFO | Train Epoch: 17 [2826240/2826240 (100%)] fLS: 3.697  cLS: 4.000 Ftcs_loss: 5.4120 (5.6243) Fmps_loss: 1.6537 (1.6526) Cmps_loss: 0.48676 (0.42900) Loss: 7.5524 (7.7060)
+2025-09-04,14:30:35 | INFO | Eval Epoch: 18 retrieval_dci_text_to_image_R@1: 0.4609	retrieval_dci_text_to_image_R@5: 0.6926	retrieval_dci_text_to_image_R@10: 0.7709	retrieval_dci_text_to_image_mean_rank: 30.2726	retrieval_dci_text_to_image_median_rank: 2.0000	retrieval_dci_image_to_text_R@1: 0.4953	retrieval_dci_image_to_text_R@5: 0.7239	retrieval_dci_image_to_text_R@10: 0.7990	retrieval_dci_image_to_text_mean_rank: 21.6250	retrieval_dci_image_to_text_median_rank: 2.0000	epoch: 18.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,14:30:35 | INFO | Start epoch 18
+2025-09-04,14:30:39 | INFO | Train Epoch: 18 [   2048/2826240 (0%)] fLS: 3.697  cLS: 4.000 Ftcs_loss: 5.4379 (5.4379) Fmps_loss: 1.6364 (1.6364) Cmps_loss: 0.42404 (0.42404) Loss: 7.4983 (7.4983)
+2025-09-04,14:33:52 | INFO | Train Epoch: 18 [ 411648/2826240 (15%)] fLS: 3.699  cLS: 4.000 Ftcs_loss: 5.6707 (5.5543) Fmps_loss: 1.6892 (1.6628) Cmps_loss: 0.46361 (0.44382) Loss: 7.8236 (7.6610)
+2025-09-04,14:37:07 | INFO | Train Epoch: 18 [ 821248/2826240 (29%)] fLS: 3.702  cLS: 4.000 Ftcs_loss: 5.3128 (5.4738) Fmps_loss: 1.5752 (1.6336) Cmps_loss: 0.37045 (0.41937) Loss: 7.2584 (7.5268)
+2025-09-04,14:40:21 | INFO | Train Epoch: 18 [1230848/2826240 (44%)] fLS: 3.704  cLS: 4.000 Ftcs_loss: 5.5265 (5.4870) Fmps_loss: 1.6157 (1.6291) Cmps_loss: 0.37251 (0.40765) Loss: 7.5147 (7.5238)
+2025-09-04,14:43:35 | INFO | Train Epoch: 18 [1640448/2826240 (58%)] fLS: 3.706  cLS: 4.000 Ftcs_loss: 5.4024 (5.4701) Fmps_loss: 1.5874 (1.6208) Cmps_loss: 0.39827 (0.40578) Loss: 7.3881 (7.4966)
+2025-09-04,14:46:49 | INFO | Train Epoch: 18 [2050048/2826240 (73%)] fLS: 3.709  cLS: 4.000 Ftcs_loss: 6.1808 (5.5885) Fmps_loss: 1.7599 (1.6439) Cmps_loss: 0.34114 (0.39500) Loss: 8.2818 (7.6275)
+2025-09-04,14:50:04 | INFO | Train Epoch: 18 [2459648/2826240 (87%)] fLS: 3.711  cLS: 4.000 Ftcs_loss: 4.7912 (5.4746) Fmps_loss: 1.4532 (1.6167) Cmps_loss: 0.41623 (0.39804) Loss: 6.6606 (7.4894)
+2025-09-04,14:52:58 | INFO | Train Epoch: 18 [2826240/2826240 (100%)] fLS: 3.713  cLS: 4.000 Ftcs_loss: 5.6947 (5.5021) Fmps_loss: 1.6080 (1.6156) Cmps_loss: 0.34267 (0.39112) Loss: 7.6453 (7.5089)
+2025-09-04,14:52:58 | INFO | Start epoch 19
+2025-09-04,14:53:11 | INFO | Train Epoch: 19 [   2048/2826240 (0%)] fLS: 3.713  cLS: 4.000 Ftcs_loss: 5.1149 (5.1149) Fmps_loss: 1.5802 (1.5802) Cmps_loss: 0.43429 (0.43429) Loss: 7.1293 (7.1293)
+2025-09-04,14:56:26 | INFO | Train Epoch: 19 [ 411648/2826240 (15%)] fLS: 3.715  cLS: 4.000 Ftcs_loss: 4.8461 (4.9805) Fmps_loss: 1.4938 (1.5370) Cmps_loss: 0.35454 (0.39441) Loss: 6.6944 (6.9119)
+2025-09-04,14:59:40 | INFO | Train Epoch: 19 [ 821248/2826240 (29%)] fLS: 3.718  cLS: 4.000 Ftcs_loss: 5.2331 (5.0647) Fmps_loss: 1.5819 (1.5520) Cmps_loss: 0.38426 (0.39103) Loss: 7.1993 (7.0077)
+2025-09-04,15:02:55 | INFO | Train Epoch: 19 [1230848/2826240 (44%)] fLS: 3.720  cLS: 4.000 Ftcs_loss: 5.3100 (5.1260) Fmps_loss: 1.5911 (1.5618) Cmps_loss: 0.38388 (0.38924) Loss: 7.2850 (7.0770)
+2025-09-04,15:06:09 | INFO | Train Epoch: 19 [1640448/2826240 (58%)] fLS: 3.723  cLS: 4.000 Ftcs_loss: 4.9970 (5.1002) Fmps_loss: 1.4979 (1.5490) Cmps_loss: 0.34584 (0.38056) Loss: 6.8407 (7.0298)
+2025-09-04,15:09:23 | INFO | Train Epoch: 19 [2050048/2826240 (73%)] fLS: 3.725  cLS: 4.000 Ftcs_loss: 4.8518 (5.0588) Fmps_loss: 1.5032 (1.5414) Cmps_loss: 0.34900 (0.37530) Loss: 6.7041 (6.9755)
+2025-09-04,15:12:37 | INFO | Train Epoch: 19 [2459648/2826240 (87%)] fLS: 3.727  cLS: 4.000 Ftcs_loss: 5.2018 (5.0792) Fmps_loss: 1.5641 (1.5446) Cmps_loss: 0.37259 (0.37491) Loss: 7.1385 (6.9988)
+2025-09-04,15:15:31 | INFO | Train Epoch: 19 [2826240/2826240 (100%)] fLS: 3.729  cLS: 4.000 Ftcs_loss: 5.1216 (5.0845) Fmps_loss: 1.5294 (1.5427) Cmps_loss: 0.39462 (0.37738) Loss: 7.0456 (7.0046)
+2025-09-04,15:16:29 | INFO | Eval Epoch: 20 retrieval_dci_text_to_image_R@1: 0.4935	retrieval_dci_text_to_image_R@5: 0.7149	retrieval_dci_text_to_image_R@10: 0.7876	retrieval_dci_text_to_image_mean_rank: 25.7545	retrieval_dci_text_to_image_median_rank: 2.0000	retrieval_dci_image_to_text_R@1: 0.5177	retrieval_dci_image_to_text_R@5: 0.7409	retrieval_dci_image_to_text_R@10: 0.8199	retrieval_dci_image_to_text_mean_rank: 19.8097	retrieval_dci_image_to_text_median_rank: 1.0000	epoch: 20.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,15:16:31 | INFO | Start epoch 20
+2025-09-04,15:16:34 | INFO | Train Epoch: 20 [   2048/2826240 (0%)] fLS: 3.729  cLS: 4.000 Ftcs_loss: 5.2262 (5.2262) Fmps_loss: 1.5705 (1.5705) Cmps_loss: 0.37827 (0.37827) Loss: 7.1751 (7.1751)
+2025-09-04,15:19:47 | INFO | Train Epoch: 20 [ 411648/2826240 (15%)] fLS: 3.732  cLS: 4.000 Ftcs_loss: 5.1588 (5.1925) Fmps_loss: 1.5667 (1.5686) Cmps_loss: 0.39356 (0.38591) Loss: 7.1190 (7.1470)
+2025-09-04,15:22:59 | INFO | Train Epoch: 20 [ 821248/2826240 (29%)] fLS: 3.734  cLS: 4.000 Ftcs_loss: 5.0058 (5.1303) Fmps_loss: 1.5039 (1.5471) Cmps_loss: 0.34992 (0.37392) Loss: 6.8596 (7.0512)
+2025-09-04,15:26:14 | INFO | Train Epoch: 20 [1230848/2826240 (44%)] fLS: 3.737  cLS: 4.000 Ftcs_loss: 5.0315 (5.1056) Fmps_loss: 1.4835 (1.5312) Cmps_loss: 0.30360 (0.35634) Loss: 6.8187 (6.9931)
+2025-09-04,15:29:29 | INFO | Train Epoch: 20 [1640448/2826240 (58%)] fLS: 3.739  cLS: 4.000 Ftcs_loss: 5.2557 (5.1356) Fmps_loss: 1.5789 (1.5407) Cmps_loss: 0.46726 (0.37852) Loss: 7.3019 (7.0548)
+2025-09-04,15:32:44 | INFO | Train Epoch: 20 [2050048/2826240 (73%)] fLS: 3.741  cLS: 4.000 Ftcs_loss: 4.4244 (5.0171) Fmps_loss: 1.4150 (1.5198) Cmps_loss: 0.24654 (0.35652) Loss: 6.0859 (6.8934)
+2025-09-04,15:35:59 | INFO | Train Epoch: 20 [2459648/2826240 (87%)] fLS: 3.743  cLS: 4.000 Ftcs_loss: 5.0565 (5.0227) Fmps_loss: 1.5191 (1.5197) Cmps_loss: 0.27126 (0.34434) Loss: 6.8469 (6.8867)
+2025-09-04,15:38:55 | INFO | Train Epoch: 20 [2826240/2826240 (100%)] fLS: 3.746  cLS: 4.000 Ftcs_loss: 5.0358 (5.0243) Fmps_loss: 1.4724 (1.5138) Cmps_loss: 0.36313 (0.34669) Loss: 6.8713 (6.8848)
+2025-09-04,15:38:55 | INFO | Start epoch 21
+2025-09-04,15:39:06 | INFO | Train Epoch: 21 [   2048/2826240 (0%)] fLS: 3.746  cLS: 4.000 Ftcs_loss: 4.8053 (4.8053) Fmps_loss: 1.4900 (1.4900) Cmps_loss: 0.32173 (0.32173) Loss: 6.6170 (6.6170)
+2025-09-04,15:42:20 | INFO | Train Epoch: 21 [ 411648/2826240 (15%)] fLS: 3.747  cLS: 4.000 Ftcs_loss: 5.1234 (4.9643) Fmps_loss: 1.5021 (1.4961) Cmps_loss: 0.26873 (0.29523) Loss: 6.8943 (6.7556)
+2025-09-04,15:45:34 | INFO | Train Epoch: 21 [ 821248/2826240 (29%)] fLS: 3.750  cLS: 4.000 Ftcs_loss: 5.0047 (4.9778) Fmps_loss: 1.5148 (1.5023) Cmps_loss: 0.32473 (0.30507) Loss: 6.8442 (6.7852)
+2025-09-04,15:48:48 | INFO | Train Epoch: 21 [1230848/2826240 (44%)] fLS: 3.752  cLS: 4.000 Ftcs_loss: 4.6516 (4.8962) Fmps_loss: 1.4444 (1.4878) Cmps_loss: 0.31282 (0.30700) Loss: 6.4088 (6.6911)
+2025-09-04,15:52:02 | INFO | Train Epoch: 21 [1640448/2826240 (58%)] fLS: 3.754  cLS: 4.000 Ftcs_loss: 4.8505 (4.8871) Fmps_loss: 1.4243 (1.4751) Cmps_loss: 0.29255 (0.30411) Loss: 6.5673 (6.6663)
+2025-09-04,15:55:16 | INFO | Train Epoch: 21 [2050048/2826240 (73%)] fLS: 3.756  cLS: 4.000 Ftcs_loss: 5.0730 (4.9181) Fmps_loss: 1.5380 (1.4856) Cmps_loss: 0.29097 (0.30192) Loss: 6.9020 (6.7056)
+2025-09-04,15:58:31 | INFO | Train Epoch: 21 [2459648/2826240 (87%)] fLS: 3.758  cLS: 4.000 Ftcs_loss: 5.0477 (4.9366) Fmps_loss: 1.4671 (1.4830) Cmps_loss: 0.33955 (0.30730) Loss: 6.8543 (6.7268)
+2025-09-04,16:01:26 | INFO | Train Epoch: 21 [2826240/2826240 (100%)] fLS: 3.760  cLS: 4.000 Ftcs_loss: 4.2921 (4.8560) Fmps_loss: 1.3467 (1.4659) Cmps_loss: 0.26873 (0.30248) Loss: 5.9075 (6.6244)
+2025-09-04,16:02:24 | INFO | Eval Epoch: 22 retrieval_dci_text_to_image_R@1: 0.5039	retrieval_dci_text_to_image_R@5: 0.7184	retrieval_dci_text_to_image_R@10: 0.7947	retrieval_dci_text_to_image_mean_rank: 26.2065	retrieval_dci_text_to_image_median_rank: 1.0000	retrieval_dci_image_to_text_R@1: 0.5171	retrieval_dci_image_to_text_R@5: 0.7459	retrieval_dci_image_to_text_R@10: 0.8190	retrieval_dci_image_to_text_mean_rank: 18.2641	retrieval_dci_image_to_text_median_rank: 1.0000	epoch: 22.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,16:02:24 | INFO | Start epoch 22
+2025-09-04,16:02:27 | INFO | Train Epoch: 22 [   2048/2826240 (0%)] fLS: 3.760  cLS: 4.000 Ftcs_loss: 4.6140 (4.6140) Fmps_loss: 1.3713 (1.3713) Cmps_loss: 0.25624 (0.25624) Loss: 6.2415 (6.2415)
+2025-09-04,16:05:40 | INFO | Train Epoch: 22 [ 411648/2826240 (15%)] fLS: 3.763  cLS: 4.000 Ftcs_loss: 5.0459 (4.8299) Fmps_loss: 1.4866 (1.4289) Cmps_loss: 0.30124 (0.27874) Loss: 6.8337 (6.5376)
+2025-09-04,16:08:54 | INFO | Train Epoch: 22 [ 821248/2826240 (29%)] fLS: 3.765  cLS: 4.000 Ftcs_loss: 4.3822 (4.6807) Fmps_loss: 1.3479 (1.4019) Cmps_loss: 0.29675 (0.28474) Loss: 6.0268 (6.3673)
+2025-09-04,16:12:10 | INFO | Train Epoch: 22 [1230848/2826240 (44%)] fLS: 3.767  cLS: 4.000 Ftcs_loss: 4.4871 (4.6323) Fmps_loss: 1.3672 (1.3932) Cmps_loss: 0.24801 (0.27556) Loss: 6.1023 (6.3011)
+2025-09-04,16:15:25 | INFO | Train Epoch: 22 [1640448/2826240 (58%)] fLS: 3.769  cLS: 4.000 Ftcs_loss: 4.7589 (4.6576) Fmps_loss: 1.4655 (1.4077) Cmps_loss: 0.33590 (0.28763) Loss: 6.5603 (6.3529)
+2025-09-04,16:18:39 | INFO | Train Epoch: 22 [2050048/2826240 (73%)] fLS: 3.771  cLS: 4.000 Ftcs_loss: 4.6498 (4.6563) Fmps_loss: 1.4310 (1.4116) Cmps_loss: 0.34813 (0.29771) Loss: 6.4289 (6.3656)
+2025-09-04,16:21:54 | INFO | Train Epoch: 22 [2459648/2826240 (87%)] fLS: 3.773  cLS: 4.000 Ftcs_loss: 4.7696 (4.6725) Fmps_loss: 1.4313 (1.4144) Cmps_loss: 0.30097 (0.29818) Loss: 6.5019 (6.3851)
+2025-09-04,16:24:51 | INFO | Train Epoch: 22 [2826240/2826240 (100%)] fLS: 3.775  cLS: 4.000 Ftcs_loss: 4.5557 (4.6579) Fmps_loss: 1.3976 (1.4123) Cmps_loss: 0.31497 (0.30028) Loss: 6.2683 (6.3705)
+2025-09-04,16:24:51 | INFO | Start epoch 23
+2025-09-04,16:25:01 | INFO | Train Epoch: 23 [   2048/2826240 (0%)] fLS: 3.775  cLS: 4.000 Ftcs_loss: 4.9480 (4.9480) Fmps_loss: 1.4266 (1.4266) Cmps_loss: 0.27081 (0.27081) Loss: 6.6455 (6.6455)
+2025-09-04,16:28:18 | INFO | Train Epoch: 23 [ 411648/2826240 (15%)] fLS: 3.777  cLS: 4.000 Ftcs_loss: 4.2829 (4.6155) Fmps_loss: 1.2988 (1.3627) Cmps_loss: 0.17277 (0.22179) Loss: 5.7545 (6.2000)
+2025-09-04,16:31:33 | INFO | Train Epoch: 23 [ 821248/2826240 (29%)] fLS: 3.779  cLS: 4.000 Ftcs_loss: 4.5844 (4.6051) Fmps_loss: 1.4670 (1.3975) Cmps_loss: 0.21860 (0.22073) Loss: 6.2700 (6.2233)
+2025-09-04,16:34:48 | INFO | Train Epoch: 23 [1230848/2826240 (44%)] fLS: 3.781  cLS: 4.000 Ftcs_loss: 4.7375 (4.6382) Fmps_loss: 1.4146 (1.4018) Cmps_loss: 0.25206 (0.22856) Loss: 6.4042 (6.2685)
+2025-09-04,16:38:02 | INFO | Train Epoch: 23 [1640448/2826240 (58%)] fLS: 3.783  cLS: 4.000 Ftcs_loss: 4.8127 (4.6731) Fmps_loss: 1.4439 (1.4102) Cmps_loss: 0.33007 (0.24886) Loss: 6.5867 (6.3322)
+2025-09-04,16:41:16 | INFO | Train Epoch: 23 [2050048/2826240 (73%)] fLS: 3.785  cLS: 4.000 Ftcs_loss: 4.6374 (4.6672) Fmps_loss: 1.3964 (1.4079) Cmps_loss: 0.24666 (0.24850) Loss: 6.2805 (6.3235)
+2025-09-04,16:44:29 | INFO | Train Epoch: 23 [2459648/2826240 (87%)] fLS: 3.787  cLS: 4.000 Ftcs_loss: 4.4801 (4.6404) Fmps_loss: 1.3697 (1.4024) Cmps_loss: 0.24483 (0.24797) Loss: 6.0947 (6.2908)
+2025-09-04,16:47:24 | INFO | Train Epoch: 23 [2826240/2826240 (100%)] fLS: 3.789  cLS: 4.000 Ftcs_loss: 3.9318 (4.5519) Fmps_loss: 1.2598 (1.3846) Cmps_loss: 0.16602 (0.23773) Loss: 5.3576 (6.1742)
+2025-09-04,16:48:23 | INFO | Eval Epoch: 24 retrieval_dci_text_to_image_R@1: 0.5211	retrieval_dci_text_to_image_R@5: 0.7386	retrieval_dci_text_to_image_R@10: 0.8077	retrieval_dci_text_to_image_mean_rank: 26.0725	retrieval_dci_text_to_image_median_rank: 1.0000	retrieval_dci_image_to_text_R@1: 0.5352	retrieval_dci_image_to_text_R@5: 0.7553	retrieval_dci_image_to_text_R@10: 0.8275	retrieval_dci_image_to_text_mean_rank: 19.9988	retrieval_dci_image_to_text_median_rank: 1.0000	epoch: 24.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,16:48:24 | INFO | Start epoch 24
+2025-09-04,16:48:27 | INFO | Train Epoch: 24 [   2048/2826240 (0%)] fLS: 3.789  cLS: 4.000 Ftcs_loss: 4.4727 (4.4727) Fmps_loss: 1.3900 (1.3900) Cmps_loss: 0.25371 (0.25371) Loss: 6.1164 (6.1164)
+2025-09-04,16:51:40 | INFO | Train Epoch: 24 [ 411648/2826240 (15%)] fLS: 3.791  cLS: 4.000 Ftcs_loss: 4.2788 (4.3757) Fmps_loss: 1.3076 (1.3488) Cmps_loss: 0.19657 (0.22514) Loss: 5.7829 (5.9496)
+2025-09-04,16:54:54 | INFO | Train Epoch: 24 [ 821248/2826240 (29%)] fLS: 3.793  cLS: 4.000 Ftcs_loss: 4.6187 (4.4567) Fmps_loss: 1.3781 (1.3586) Cmps_loss: 0.18133 (0.21054) Loss: 6.1781 (6.0258)
+2025-09-04,16:58:08 | INFO | Train Epoch: 24 [1230848/2826240 (44%)] fLS: 3.795  cLS: 4.000 Ftcs_loss: 4.1434 (4.3784) Fmps_loss: 1.2800 (1.3389) Cmps_loss: 0.18203 (0.20341) Loss: 5.6054 (5.9207)
+2025-09-04,17:01:21 | INFO | Train Epoch: 24 [1640448/2826240 (58%)] fLS: 3.797  cLS: 4.000 Ftcs_loss: 4.4567 (4.3940) Fmps_loss: 1.3340 (1.3379) Cmps_loss: 0.26843 (0.21641) Loss: 6.0591 (5.9484)
+2025-09-04,17:04:37 | INFO | Train Epoch: 24 [2050048/2826240 (73%)] fLS: 3.798  cLS: 4.000 Ftcs_loss: 4.2591 (4.3715) Fmps_loss: 1.3507 (1.3401) Cmps_loss: 0.35387 (0.23932) Loss: 5.9636 (5.9509)
+2025-09-04,17:07:51 | INFO | Train Epoch: 24 [2459648/2826240 (87%)] fLS: 3.800  cLS: 4.000 Ftcs_loss: 4.1337 (4.3376) Fmps_loss: 1.2678 (1.3297) Cmps_loss: 0.29067 (0.24666) Loss: 5.6922 (5.9140)
+2025-09-04,17:10:45 | INFO | Train Epoch: 24 [2826240/2826240 (100%)] fLS: 3.802  cLS: 4.000 Ftcs_loss: 3.9717 (4.2918) Fmps_loss: 1.2623 (1.3213) Cmps_loss: 0.18786 (0.23931) Loss: 5.4218 (5.8524)
+2025-09-04,17:10:45 | INFO | Start epoch 25
+2025-09-04,17:10:57 | INFO | Train Epoch: 25 [   2048/2826240 (0%)] fLS: 3.802  cLS: 4.000 Ftcs_loss: 4.0856 (4.0856) Fmps_loss: 1.2878 (1.2878) Cmps_loss: 0.17369 (0.17369) Loss: 5.5471 (5.5471)
+2025-09-04,17:14:12 | INFO | Train Epoch: 25 [ 411648/2826240 (15%)] fLS: 3.804  cLS: 4.000 Ftcs_loss: 4.0408 (4.0632) Fmps_loss: 1.2378 (1.2628) Cmps_loss: 0.23814 (0.20592) Loss: 5.5168 (5.5319)
+2025-09-04,17:17:27 | INFO | Train Epoch: 25 [ 821248/2826240 (29%)] fLS: 3.805  cLS: 4.000 Ftcs_loss: 4.2579 (4.1281) Fmps_loss: 1.2865 (1.2707) Cmps_loss: 0.22720 (0.21301) Loss: 5.7716 (5.6118)
+2025-09-04,17:20:41 | INFO | Train Epoch: 25 [1230848/2826240 (44%)] fLS: 3.807  cLS: 4.000 Ftcs_loss: 4.0733 (4.1144) Fmps_loss: 1.3057 (1.2794) Cmps_loss: 0.27471 (0.22844) Loss: 5.6538 (5.6223)
+2025-09-04,17:23:56 | INFO | Train Epoch: 25 [1640448/2826240 (58%)] fLS: 3.809  cLS: 4.000 Ftcs_loss: 4.0836 (4.1082) Fmps_loss: 1.2597 (1.2755) Cmps_loss: 0.23742 (0.23023) Loss: 5.5807 (5.6140)
+2025-09-04,17:27:11 | INFO | Train Epoch: 25 [2050048/2826240 (73%)] fLS: 3.810  cLS: 4.000 Ftcs_loss: 3.7294 (4.0451) Fmps_loss: 1.1864 (1.2607) Cmps_loss: 0.17060 (0.22029) Loss: 5.0864 (5.5261)
+2025-09-04,17:30:25 | INFO | Train Epoch: 25 [2459648/2826240 (87%)] fLS: 3.812  cLS: 4.000 Ftcs_loss: 4.1203 (4.0558) Fmps_loss: 1.3229 (1.2696) Cmps_loss: 0.25254 (0.22490) Loss: 5.6957 (5.5503)
+2025-09-04,17:33:21 | INFO | Train Epoch: 25 [2826240/2826240 (100%)] fLS: 3.814  cLS: 4.000 Ftcs_loss: 3.7669 (4.0197) Fmps_loss: 1.1737 (1.2576) Cmps_loss: 0.22756 (0.22523) Loss: 5.1681 (5.5025)
+2025-09-04,17:34:18 | INFO | Eval Epoch: 26 retrieval_dci_text_to_image_R@1: 0.5427	retrieval_dci_text_to_image_R@5: 0.7575	retrieval_dci_text_to_image_R@10: 0.8278	retrieval_dci_text_to_image_mean_rank: 22.2341	retrieval_dci_text_to_image_median_rank: 1.0000	retrieval_dci_image_to_text_R@1: 0.5616	retrieval_dci_image_to_text_R@5: 0.7812	retrieval_dci_image_to_text_R@10: 0.8439	retrieval_dci_image_to_text_mean_rank: 16.3763	retrieval_dci_image_to_text_median_rank: 1.0000	epoch: 26.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,17:34:18 | INFO | Start epoch 26
+2025-09-04,17:34:22 | INFO | Train Epoch: 26 [   2048/2826240 (0%)] fLS: 3.814  cLS: 4.000 Ftcs_loss: 4.0446 (4.0446) Fmps_loss: 1.2606 (1.2606) Cmps_loss: 0.20104 (0.20104) Loss: 5.5063 (5.5063)
+2025-09-04,17:37:36 | INFO | Train Epoch: 26 [ 411648/2826240 (15%)] fLS: 3.815  cLS: 4.000 Ftcs_loss: 3.6682 (3.8564) Fmps_loss: 1.1847 (1.2227) Cmps_loss: 0.20235 (0.20170) Loss: 5.0553 (5.2808)
+2025-09-04,17:40:50 | INFO | Train Epoch: 26 [ 821248/2826240 (29%)] fLS: 3.817  cLS: 4.000 Ftcs_loss: 4.1342 (3.9490) Fmps_loss: 1.3004 (1.2486) Cmps_loss: 0.18963 (0.19768) Loss: 5.6242 (5.3953)
+2025-09-04,17:44:05 | INFO | Train Epoch: 26 [1230848/2826240 (44%)] fLS: 3.818  cLS: 4.000 Ftcs_loss: 3.8241 (3.9178) Fmps_loss: 1.2496 (1.2489) Cmps_loss: 0.24135 (0.20859) Loss: 5.3151 (5.3752)
+2025-09-04,17:47:21 | INFO | Train Epoch: 26 [1640448/2826240 (58%)] fLS: 3.820  cLS: 4.000 Ftcs_loss: 3.9622 (3.9267) Fmps_loss: 1.2384 (1.2468) Cmps_loss: 0.18909 (0.20469) Loss: 5.3897 (5.3781)
+2025-09-04,17:50:36 | INFO | Train Epoch: 26 [2050048/2826240 (73%)] fLS: 3.821  cLS: 4.000 Ftcs_loss: 3.8398 (3.9122) Fmps_loss: 1.2405 (1.2457) Cmps_loss: 0.20187 (0.20422) Loss: 5.2822 (5.3621)
+2025-09-04,17:53:51 | INFO | Train Epoch: 26 [2459648/2826240 (87%)] fLS: 3.822  cLS: 4.000 Ftcs_loss: 3.8751 (3.9069) Fmps_loss: 1.2420 (1.2452) Cmps_loss: 0.16234 (0.19824) Loss: 5.2795 (5.3503)
+2025-09-04,17:56:46 | INFO | Train Epoch: 26 [2826240/2826240 (100%)] fLS: 3.824  cLS: 4.000 Ftcs_loss: 3.9969 (3.9182) Fmps_loss: 1.2349 (1.2439) Cmps_loss: 0.16876 (0.19455) Loss: 5.4005 (5.3566)
+2025-09-04,17:56:46 | INFO | Start epoch 27
+2025-09-04,17:56:57 | INFO | Train Epoch: 27 [   2048/2826240 (0%)] fLS: 3.824  cLS: 4.000 Ftcs_loss: 4.1337 (4.1337) Fmps_loss: 1.2469 (1.2469) Cmps_loss: 0.20663 (0.20663) Loss: 5.5872 (5.5872)
+2025-09-04,18:00:12 | INFO | Train Epoch: 27 [ 411648/2826240 (15%)] fLS: 3.825  cLS: 4.000 Ftcs_loss: 3.8375 (3.9856) Fmps_loss: 1.1865 (1.2167) Cmps_loss: 0.20081 (0.20372) Loss: 5.2248 (5.4060)
+2025-09-04,18:03:28 | INFO | Train Epoch: 27 [ 821248/2826240 (29%)] fLS: 3.826  cLS: 4.000 Ftcs_loss: 3.9948 (3.9887) Fmps_loss: 1.2405 (1.2246) Cmps_loss: 0.18869 (0.19871) Loss: 5.4240 (5.4120)
+2025-09-04,18:06:44 | INFO | Train Epoch: 27 [1230848/2826240 (44%)] fLS: 3.828  cLS: 4.000 Ftcs_loss: 4.1316 (4.0244) Fmps_loss: 1.2455 (1.2298) Cmps_loss: 0.14431 (0.18511) Loss: 5.5214 (5.4394)
+2025-09-04,18:09:59 | INFO | Train Epoch: 27 [1640448/2826240 (58%)] fLS: 3.829  cLS: 4.000 Ftcs_loss: 3.7704 (3.9736) Fmps_loss: 1.1863 (1.2211) Cmps_loss: 0.21010 (0.19011) Loss: 5.1667 (5.3848)
+2025-09-04,18:13:13 | INFO | Train Epoch: 27 [2050048/2826240 (73%)] fLS: 3.830  cLS: 4.000 Ftcs_loss: 3.7047 (3.9288) Fmps_loss: 1.2393 (1.2241) Cmps_loss: 0.21422 (0.19413) Loss: 5.1582 (5.3471)
+2025-09-04,18:16:26 | INFO | Train Epoch: 27 [2459648/2826240 (87%)] fLS: 3.831  cLS: 4.000 Ftcs_loss: 3.5629 (3.8765) Fmps_loss: 1.1909 (1.2194) Cmps_loss: 0.16641 (0.19017) Loss: 4.9202 (5.2861)
+2025-09-04,18:19:20 | INFO | Train Epoch: 27 [2826240/2826240 (100%)] fLS: 3.832  cLS: 4.000 Ftcs_loss: 3.3238 (3.8074) Fmps_loss: 1.1165 (1.2065) Cmps_loss: 0.15377 (0.18562) Loss: 4.5940 (5.1996)
+2025-09-04,18:20:18 | INFO | Eval Epoch: 28 retrieval_dci_text_to_image_R@1: 0.5462	retrieval_dci_text_to_image_R@5: 0.7596	retrieval_dci_text_to_image_R@10: 0.8240	retrieval_dci_text_to_image_mean_rank: 23.9882	retrieval_dci_text_to_image_median_rank: 1.0000	retrieval_dci_image_to_text_R@1: 0.5636	retrieval_dci_image_to_text_R@5: 0.7785	retrieval_dci_image_to_text_R@10: 0.8480	retrieval_dci_image_to_text_mean_rank: 17.0186	retrieval_dci_image_to_text_median_rank: 1.0000	epoch: 28.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,18:20:20 | INFO | Start epoch 28
+2025-09-04,18:20:23 | INFO | Train Epoch: 28 [   2048/2826240 (0%)] fLS: 3.832  cLS: 4.000 Ftcs_loss: 3.4480 (3.4480) Fmps_loss: 1.1214 (1.1214) Cmps_loss: 0.18127 (0.18127) Loss: 4.7506 (4.7506)
+2025-09-04,18:23:37 | INFO | Train Epoch: 28 [ 411648/2826240 (15%)] fLS: 3.833  cLS: 4.000 Ftcs_loss: 3.4583 (3.4531) Fmps_loss: 1.1297 (1.1255) Cmps_loss: 0.15018 (0.16572) Loss: 4.7381 (4.7444)
+2025-09-04,18:26:52 | INFO | Train Epoch: 28 [ 821248/2826240 (29%)] fLS: 3.834  cLS: 4.000 Ftcs_loss: 3.9187 (3.6083) Fmps_loss: 1.1840 (1.1450) Cmps_loss: 0.23624 (0.18923) Loss: 5.3389 (4.9426)
+2025-09-04,18:30:07 | INFO | Train Epoch: 28 [1230848/2826240 (44%)] fLS: 3.835  cLS: 4.000 Ftcs_loss: 3.4919 (3.5792) Fmps_loss: 1.1465 (1.1454) Cmps_loss: 0.14324 (0.17773) Loss: 4.7816 (4.9023)
+2025-09-04,18:33:23 | INFO | Train Epoch: 28 [1640448/2826240 (58%)] fLS: 3.836  cLS: 4.000 Ftcs_loss: 3.4928 (3.5619) Fmps_loss: 1.1930 (1.1549) Cmps_loss: 0.11836 (0.16586) Loss: 4.8042 (4.8827)
+2025-09-04,18:36:39 | INFO | Train Epoch: 28 [2050048/2826240 (73%)] fLS: 3.837  cLS: 4.000 Ftcs_loss: 3.9007 (3.6184) Fmps_loss: 1.1975 (1.1620) Cmps_loss: 0.23155 (0.17681) Loss: 5.3298 (4.9572)
+2025-09-04,18:39:54 | INFO | Train Epoch: 28 [2459648/2826240 (87%)] fLS: 3.837  cLS: 4.000 Ftcs_loss: 3.6999 (3.6300) Fmps_loss: 1.1726 (1.1635) Cmps_loss: 0.16937 (0.17574) Loss: 5.0418 (4.9693)
+2025-09-04,18:42:50 | INFO | Train Epoch: 28 [2826240/2826240 (100%)] fLS: 3.838  cLS: 4.000 Ftcs_loss: 3.2865 (3.5871) Fmps_loss: 1.0981 (1.1553) Cmps_loss: 0.16468 (0.17436) Loss: 4.5493 (4.9168)
+2025-09-04,18:42:50 | INFO | Start epoch 29
+2025-09-04,18:43:02 | INFO | Train Epoch: 29 [   2048/2826240 (0%)] fLS: 3.838  cLS: 4.000 Ftcs_loss: 3.6010 (3.6010) Fmps_loss: 1.1922 (1.1922) Cmps_loss: 0.12488 (0.12488) Loss: 4.9181 (4.9181)
+2025-09-04,18:46:17 | INFO | Train Epoch: 29 [ 411648/2826240 (15%)] fLS: 3.839  cLS: 4.000 Ftcs_loss: 3.3253 (3.4631) Fmps_loss: 1.1118 (1.1520) Cmps_loss: 0.091820 (0.10835) Loss: 4.5290 (4.7235)
+2025-09-04,18:49:30 | INFO | Train Epoch: 29 [ 821248/2826240 (29%)] fLS: 3.839  cLS: 4.000 Ftcs_loss: 3.2499 (3.3921) Fmps_loss: 1.0766 (1.1269) Cmps_loss: 0.13373 (0.11681) Loss: 4.4602 (4.6357)
+2025-09-04,18:52:43 | INFO | Train Epoch: 29 [1230848/2826240 (44%)] fLS: 3.840  cLS: 4.000 Ftcs_loss: 3.5219 (3.4245) Fmps_loss: 1.1023 (1.1207) Cmps_loss: 0.11011 (0.11514) Loss: 4.7344 (4.6604)
+2025-09-04,18:55:57 | INFO | Train Epoch: 29 [1640448/2826240 (58%)] fLS: 3.840  cLS: 4.000 Ftcs_loss: 3.2955 (3.3987) Fmps_loss: 1.1197 (1.1205) Cmps_loss: 0.16690 (0.12549) Loss: 4.5820 (4.6447)
+2025-09-04,18:59:13 | INFO | Train Epoch: 29 [2050048/2826240 (73%)] fLS: 3.841  cLS: 4.000 Ftcs_loss: 3.4619 (3.4092) Fmps_loss: 1.1558 (1.1264) Cmps_loss: 0.18163 (0.13485) Loss: 4.7993 (4.6705)
+2025-09-04,19:02:28 | INFO | Train Epoch: 29 [2459648/2826240 (87%)] fLS: 3.841  cLS: 4.000 Ftcs_loss: 3.7552 (3.4587) Fmps_loss: 1.1804 (1.1341) Cmps_loss: 0.15254 (0.13737) Loss: 5.0881 (4.7301)
+2025-09-04,19:05:23 | INFO | Train Epoch: 29 [2826240/2826240 (100%)] fLS: 3.842  cLS: 4.000 Ftcs_loss: 3.4811 (3.4615) Fmps_loss: 1.1337 (1.1341) Cmps_loss: 0.17403 (0.14196) Loss: 4.7888 (4.7375)
+2025-09-04,19:06:22 | INFO | Eval Epoch: 30 retrieval_dci_text_to_image_R@1: 0.5598	retrieval_dci_text_to_image_R@5: 0.7672	retrieval_dci_text_to_image_R@10: 0.8324	retrieval_dci_text_to_image_mean_rank: 22.9029	retrieval_dci_text_to_image_median_rank: 1.0000	retrieval_dci_image_to_text_R@1: 0.5603	retrieval_dci_image_to_text_R@5: 0.7837	retrieval_dci_image_to_text_R@10: 0.8470	retrieval_dci_image_to_text_mean_rank: 16.8113	retrieval_dci_image_to_text_median_rank: 1.0000	epoch: 30.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
+2025-09-04,19:06:22 | INFO | Start epoch 30
+2025-09-04,19:06:25 | INFO | Train Epoch: 30 [   2048/2826240 (0%)] fLS: 3.842  cLS: 4.000 Ftcs_loss: 3.4902 (3.4902) Fmps_loss: 1.1467 (1.1467) Cmps_loss: 0.15824 (0.15824) Loss: 4.7950 (4.7950)
+2025-09-04,19:09:39 | INFO | Train Epoch: 30 [ 411648/2826240 (15%)] fLS: 3.842  cLS: 4.000 Ftcs_loss: 3.4695 (3.4798) Fmps_loss: 1.1439 (1.1453) Cmps_loss: 0.17908 (0.16866) Loss: 4.7926 (4.7938)
+2025-09-04,19:12:54 | INFO | Train Epoch: 30 [ 821248/2826240 (29%)] fLS: 3.842  cLS: 4.000 Ftcs_loss: 3.3747 (3.4448) Fmps_loss: 1.0925 (1.1277) Cmps_loss: 0.14652 (0.16128) Loss: 4.6138 (4.7338)
+2025-09-04,19:16:09 | INFO | Train Epoch: 30 [1230848/2826240 (44%)] fLS: 3.843  cLS: 4.000 Ftcs_loss: 3.6189 (3.4883) Fmps_loss: 1.1771 (1.1401) Cmps_loss: 0.12245 (0.15157) Loss: 4.9185 (4.7800)
+2025-09-04,19:19:23 | INFO | Train Epoch: 30 [1640448/2826240 (58%)] fLS: 3.843  cLS: 4.000 Ftcs_loss: 3.5569 (3.5020) Fmps_loss: 1.1140 (1.1349) Cmps_loss: 0.20295 (0.16185) Loss: 4.8739 (4.7987)
+2025-09-04,19:22:38 | INFO | Train Epoch: 30 [2050048/2826240 (73%)] fLS: 3.843  cLS: 4.000 Ftcs_loss: 3.3314 (3.4736) Fmps_loss: 1.1164 (1.1318) Cmps_loss: 0.19442 (0.16728) Loss: 4.6422 (4.7727)
+2025-09-04,19:25:53 | INFO | Train Epoch: 30 [2459648/2826240 (87%)] fLS: 3.843  cLS: 4.000 Ftcs_loss: 3.6021 (3.4920) Fmps_loss: 1.2103 (1.1430) Cmps_loss: 0.15180 (0.16507) Loss: 4.9642 (4.8000)
+2025-09-04,19:28:48 | INFO | Train Epoch: 30 [2826240/2826240 (100%)] fLS: 3.844  cLS: 4.000 Ftcs_loss: 3.5892 (3.5041) Fmps_loss: 1.1828 (1.1480) Cmps_loss: 0.14496 (0.16255) Loss: 4.9169 (4.8146)
+2025-09-04,19:28:48 | INFO | Start epoch 31
+2025-09-04,19:28:59 | INFO | Train Epoch: 31 [   2048/2826240 (0%)] fLS: 3.844  cLS: 4.000 Ftcs_loss: 3.5099 (3.5099) Fmps_loss: 1.1213 (1.1213) Cmps_loss: 0.16327 (0.16327) Loss: 4.7945 (4.7945)
+2025-09-04,19:32:14 | INFO | Train Epoch: 31 [ 411648/2826240 (15%)] fLS: 3.844  cLS: 4.000 Ftcs_loss: 3.6004 (3.5551) Fmps_loss: 1.0987 (1.1100) Cmps_loss: 0.092483 (0.12787) Loss: 4.7915 (4.7930)
+2025-09-04,19:35:29 | INFO | Train Epoch: 31 [ 821248/2826240 (29%)] fLS: 3.844  cLS: 4.000 Ftcs_loss: 3.5894 (3.5666) Fmps_loss: 1.1600 (1.1267) Cmps_loss: 0.13131 (0.12902) Loss: 4.8808 (4.8223)
+2025-09-04,19:38:43 | INFO | Train Epoch: 31 [1230848/2826240 (44%)] fLS: 3.844  cLS: 4.000 Ftcs_loss: 3.4766 (3.5441) Fmps_loss: 1.1239 (1.1260) Cmps_loss: 0.14764 (0.13368) Loss: 4.7481 (4.8037)
+2025-09-04,19:41:58 | INFO | Train Epoch: 31 [1640448/2826240 (58%)] fLS: 3.844  cLS: 4.000 Ftcs_loss: 3.7787 (3.5910) Fmps_loss: 1.1763 (1.1360) Cmps_loss: 0.12999 (0.13294) Loss: 5.0850 (4.8600)
+2025-09-04,19:45:13 | INFO | Train Epoch: 31 [2050048/2826240 (73%)] fLS: 3.844  cLS: 4.000 Ftcs_loss: 3.3634 (3.5531) Fmps_loss: 1.1345 (1.1358) Cmps_loss: 0.18305 (0.14129) Loss: 4.6809 (4.8301)
+2025-09-04,19:48:27 | INFO | Train Epoch: 31 [2459648/2826240 (87%)] fLS: 3.844  cLS: 4.000 Ftcs_loss: 3.6192 (3.5625) Fmps_loss: 1.1289 (1.1348) Cmps_loss: 0.12101 (0.13839) Loss: 4.8691 (4.8357)
+2025-09-04,19:51:21 | INFO | Train Epoch: 31 [2826240/2826240 (100%)] fLS: 3.844  cLS: 4.000 Ftcs_loss: 3.6173 (3.5694) Fmps_loss: 1.1213 (1.1331) Cmps_loss: 0.092190 (0.13262) Loss: 4.8308 (4.8351)
+2025-09-04,19:52:11 | INFO | Eval Epoch: 32 retrieval_dci_text_to_image_R@1: 0.5582	retrieval_dci_text_to_image_R@5: 0.7685	retrieval_dci_text_to_image_R@10: 0.8328	retrieval_dci_text_to_image_mean_rank: 22.5443	retrieval_dci_text_to_image_median_rank: 1.0000	retrieval_dci_image_to_text_R@1: 0.5660	retrieval_dci_image_to_text_R@5: 0.7860	retrieval_dci_image_to_text_R@10: 0.8483	retrieval_dci_image_to_text_mean_rank: 16.2693	retrieval_dci_image_to_text_median_rank: 1.0000	epoch: 32.0000	retrieval_dci_num_text_samples: 7805.0000	retrieval_dci_num_image_samples: 7805.0000
