@@ -5,7 +5,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2602.02977-b31b1b.svg)](https://arxiv.org/abs/2602.02977)
 [![PDF](https://img.shields.io/badge/PDF-Download-FF6F00.svg)](https://arxiv.org/pdf/2602.02977)
 [![Project](https://img.shields.io/badge/Project-Page-4285F4.svg)](https://byeongju.me/CAFT/)
-[![Models](https://img.shields.io/badge/Models-Drive-34A853.svg)](https://drive.google.com/drive/folders/1APFc_JniODAlWW_u2pmTknKfd40YgwH4?usp=drive_link)
+[![Models](https://img.shields.io/badge/Models-HuggingFace-FFD21E.svg)](https://huggingface.co/byeongju-woo/CAFT)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [Byeongju Woo](https://byeongju.me/), [Zilin Wang](https://wayne2wang.github.io/), [Byeonghyun Pak](https://byeonghyunpak.github.io/), [Sangwoo Mo](https://sites.google.com/view/sangwoomo), [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/)
@@ -51,7 +51,7 @@ Expected data folder structure is as follows:
 
 ## Checkpoints
 
-Download checkpoints on [Google Drive](https://drive.google.com/drive/folders/1APFc_JniODAlWW_u2pmTknKfd40YgwH4?usp=drive_link). Default is **CAFT-30M**, while subsets (3M, 12M, 15M) are also released.
+Download checkpoints from [Hugging Face](https://huggingface.co/byeongju-woo/CAFT). Default is **CAFT-30M**, while subsets (3M, 12M, 15M) are also released.
 
 ## Quick Demos
 
