@@ -16,22 +16,31 @@ CAFT (**C**ross-domain **A**lignment of **F**orests and **T**rees) jointly learn
 
 ---
 
-## Environments
+## Environment Setup
+
+### conda
+
+Requires Python 3.8, Linux x86_64, and an NVIDIA GPU.
+
+```bash
+conda create -n caft --override-channels -c conda-forge python=3.8 cudatoolkit=11.6 pip
+conda activate caft
+export LD_LIBRARY_PATH="$CONDA_PREFIX/lib:$LD_LIBRARY_PATH"
+pip install -r requirements.txt
+pip install https://data.dgl.ai/wheels/cu116/dgl-1.1.3%2Bcu116-cp38-cp38-manylinux1_x86_64.whl
+```
+
+- Python 3.8 and `cudatoolkit=11.6` are both required by the `dgl` wheel above — it loads `libcudart.so.11.0` by exact name, which only `cudatoolkit` provides in a plain-named form. The `export LD_LIBRARY_PATH` line is also required, every time you start a new shell for this env — without it, `import dgl` fails to find that library even though `cudatoolkit` is installed.
+- `dgl` isn't on PyPI for this build, so it's installed from that URL separately, after `requirements.txt`.
+
+### Docker
 
 We provide a Docker image ([`junwha/cast:v2`](https://hub.docker.com/r/junwha/cast)) built on Ubuntu 22.04.
 
 ```bash
-# pull the image (docker run below will also auto-pull it if you skip this)
 docker pull junwha/cast:v2
-
-# start a container
 docker run --gpus all -it junwha/cast:v2
 ```
-
-To build your own environment instead, make sure it satisfies all of the following:
-- [FLAIR](https://github.com/ExplainableML/flair) (code base)
-- [CAST](https://github.com/twke18/CAST) (vision backbone, adapted)
-- [SFCN](https://github.com/fuy34/superpixel_fcn) (superpixel algorithm)
 
 ## Datasets
 
